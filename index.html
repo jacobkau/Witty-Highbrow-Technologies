@@ -738,9 +738,9 @@
             
             // Update button text and icon
             if (isSidebarCollapsed) {
-                toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="sidebar.png"> <span class="toggle-text">Expand</span>';
+                toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="images/sidebar.png"> <span class="toggle-text">Expand</span>';
             } else {
-                toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="sidebar.png"> <span class="toggle-text">Collapse</span>';
+                toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="images/sidebar.png"> <span class="toggle-text">Collapse</span>';
             }
         }
 
@@ -839,11 +839,11 @@
                 if (isSidebarCollapsed) {
                     sidebar.classList.add('collapsed');
                     content.classList.add('expanded');
-                    toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="sidebar.png"><span class="toggle-text">Expand</span>';
+                    toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="images/sidebar.png"><span class="toggle-text">Expand</span>';
                 } else {
                     sidebar.classList.remove('collapsed');
                     content.classList.remove('expanded');
-                    toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="sidebar.png"><span class="toggle-text">Collapse</span>';
+                    toggleBtn.innerHTML = '<img class="icon-img toggle-icon" src="images/sidebar.png"><span class="toggle-text">Collapse</span>';
                 }
             } else {
                 // On mobile, always show full sidebar when open
