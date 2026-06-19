@@ -34,6 +34,7 @@ RUN a2dismod mpm_event || true
 RUN a2dismod mpm_worker || true
 RUN a2enmod mpm_prefork
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 # ============================================
 # Set Document Root to /var/www/html (where files are copied)
