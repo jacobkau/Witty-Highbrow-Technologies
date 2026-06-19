@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
-    <!-- Use Font Awesome for icons (more reliable than SVG files) -->
+    <!-- Use Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Witty Highbrow Technologies | Home</title>
 </head>
@@ -120,7 +120,7 @@
         width: 70%;
     }
 
-    /* Social Icons - FIXED */
+    /* Social Icons */
     .social {
         display: flex;
         gap: 12px;
@@ -173,7 +173,7 @@
         color: var(--white);
     }
 
-    /* Sidebar */
+    /* ========== SIDEBAR - VISIBLE BY DEFAULT ON DESKTOP ========== */
     .sidebar {
         width: 260px;
         background: var(--secondary-color);
@@ -182,15 +182,17 @@
         top: 70px;
         left: 0;
         bottom: 0;
-        transform: translateX(-100%);
+        transform: translateX(0); /* VISIBLE by default */
         transition: var(--transition);
         z-index: 999;
         overflow-y: auto;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        border-right: 2px solid var(--primary-color);
     }
 
-    .sidebar.open {
-        transform: translateX(0);
+    /* When sidebar is closed (on mobile) */
+    .sidebar.closed {
+        transform: translateX(-100%);
     }
 
     .sidebar a {
@@ -222,18 +224,18 @@
         color: var(--white);
     }
 
-    /* Content */
+    /* Content with sidebar visible */
     .content1 {
         flex: 1;
         margin-top: 70px;
-        margin-left: 0;
+        margin-left: 260px; /* Space for sidebar */
         transition: var(--transition);
         height: calc(100vh - 70px);
     }
 
-    .content1.shifted {
-        margin-left: 260px;
-        width: calc(100% - 260px);
+    /* When sidebar is closed */
+    .content1.expanded {
+        margin-left: 0;
     }
 
     iframe {
@@ -259,7 +261,7 @@
         opacity: 0.9;
     }
 
-    /* Responsive Design */
+    /* ========== MOBILE RESPONSIVE ========== */
     @media (max-width: 992px) {
         .logo h1 {
             font-size: 16px;
@@ -276,6 +278,20 @@
     }
 
     @media (max-width: 768px) {
+        /* Hide sidebar on mobile by default */
+        .sidebar {
+            transform: translateX(-100%);
+            width: 280px;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .content1 {
+            margin-left: 0;
+        }
+
         .menu-toggle {
             display: block !important;
         }
@@ -325,17 +341,13 @@
             display: flex;
         }
 
-        .sidebar.open {
-            width: 280px;
-        }
-
-        .content1.shifted {
-            margin-left: 0;
-        }
-
         .menu-toggle.hidden,
         .menu-toggle1.hidden {
             display: none !important;
+        }
+
+        .close-btn {
+            display: block !important;
         }
     }
 
@@ -360,7 +372,6 @@
         }
     }
 
-    /* Close button for mobile */
     .close-btn {
         display: none;
         cursor: pointer;
@@ -369,12 +380,6 @@
         position: absolute;
         right: 10px;
         top: 10px;
-    }
-
-    @media (max-width: 768px) {
-        .close-btn {
-            display: block !important;
-        }
     }
 </style>
 
@@ -407,7 +412,6 @@
                 </a>
             </div>
 
-            <!-- FIXED: Using Font Awesome icons instead of SVG files -->
             <div class="social">
                 <a href="https://www.tiktok.com/@jacob_witty" target="_blank" aria-label="TikTok">
                     <i class="fab fa-tiktok"></i>
@@ -432,7 +436,8 @@
         </nav>
     </header>
 
-    <div class="sidebar">
+    <!-- SIDEBAR - Now visible on desktop by default -->
+    <div class="sidebar" id="sidebar">
         <a href="#" onclick="loadPage('start.html'); setActiveLink(this)">
             <i class="fas fa-home"></i>Home
         </a>
@@ -472,7 +477,6 @@
     <script>
         function loadPage(url) {
             document.getElementById("page-frame").src = url;
-            // Close mobile menu after navigation
             if (window.innerWidth <= 768) {
                 document.querySelector('.navbar').classList.remove('active');
                 document.querySelector('.social').classList.remove('active');
@@ -480,10 +484,10 @@
         }
 
         function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            const content = document.querySelector('.content1');
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('mainContent');
             sidebar.classList.toggle('open');
-            content.classList.toggle('shifted');
+            content.classList.toggle('expanded');
         }
 
         function setActiveLink(link) {
@@ -506,46 +510,32 @@
 
         // Close sidebar when clicking outside on mobile
         document.addEventListener('click', function(event) {
-            const sidebar = document.querySelector('.sidebar');
+            const sidebar = document.getElementById('sidebar');
             const menuToggle = document.querySelector('.menu-toggle');
-            const isClickInsideSidebar = sidebar.contains(event.target);
-            const isClickOnToggle = menuToggle.contains(event.target);
-            
-            if (window.innerWidth <= 768 && !isClickInsideSidebar && !isClickOnToggle) {
-                if (sidebar.classList.contains('open')) {
-                    sidebar.classList.remove('open');
-                    document.querySelector('.content1').classList.remove('shifted');
-                }
-            }
-        });
-
-        // Close menu when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            const navbar = document.querySelector('.navbar');
-            const social = document.querySelector('.social');
-            const menuToggle1 = document.querySelector('.menu-toggle1');
             
             if (window.innerWidth <= 768) {
-                const isClickInsideNav = navbar.contains(event.target);
-                const isClickInsideSocial = social.contains(event.target);
-                const isClickOnToggle = menuToggle1.contains(event.target);
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
                 
-                if (!isClickInsideNav && !isClickInsideSocial && !isClickOnToggle) {
-                    navbar.classList.remove('active');
-                    social.classList.remove('active');
-                    document.querySelector('.menu-toggle').classList.remove('hidden');
-                    document.querySelector('.menu-toggle1').classList.remove('hidden');
+                if (!isClickInsideSidebar && !isClickOnToggle) {
+                    if (sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                        document.getElementById('mainContent').classList.remove('expanded');
+                    }
                 }
             }
         });
 
         // Handle resize
         window.addEventListener('resize', function() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('mainContent');
+            
             if (window.innerWidth > 768) {
+                sidebar.classList.remove('open');
+                content.classList.remove('expanded');
                 document.querySelector('.navbar').classList.remove('active');
                 document.querySelector('.social').classList.remove('active');
-                document.querySelector('.menu-toggle').classList.remove('hidden');
-                document.querySelector('.menu-toggle1').classList.remove('hidden');
             }
         });
     </script>
