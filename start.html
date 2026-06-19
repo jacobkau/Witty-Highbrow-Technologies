@@ -2,254 +2,622 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Witty Highbrow Technologies | HOME</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" onerror="this.href='https://via.placeholder.com/50';this.onerror=null;">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap">
-	<style>
-		.slide {
-			position: absolute;
-			left: 100%;
-			width: 100%;
-			margin-left: 30px;
-			height: 90%;
-			transition: left 0.5s ease-in-out;
-			background-color: #1e1e2f;
-			color: #fff;
-			
-			border-radius: 15px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witty Highbrow Technologies | HOME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <style>
+        /* ===== GLOBAL RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			/* Optional glow effect */
-			box-shadow: 0 0 15px rgba(0, 247, 255, 0.4),
-			0 0 30px rgba(139, 0, 255, 0.3),
-			0 0 45px rgba(255, 0, 128, 0.2);
-		}
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #0a0a1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
+        /* ===== SLIDER SECTION ===== */
+        .slider-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            position: relative;
+            padding: 40px 20px;
+        }
 
-		.content {
-			margin-left: 40px;
-		}
+        .slider-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/back.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
 
-		.slide.active {
-			left: 0 !important;
-		}
+        .slider-container {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
 
-		.slides-container {
-			position: relative;
+        /* ===== SLIDER ===== */
+        .slides-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 103, 56, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 450px;
+        }
 
-			height: 80vh;
-			overflow: hidden;
-		}
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            padding: 50px 60px;
+            transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
+        }
 
-		.slides-container .content p {
-			margin-bottom: 0.5rem;
-		}
+        .slide.active {
+            left: 0;
+        }
 
-		.indicators {
-			position: absolute;
-			bottom: 20px;
-			left: 50%;
-			transform: translateX(-50%);
-			z-index: 101;
-		}
+        .slide-content {
+            max-width: 700px;
+        }
 
-		.indicator-dot {
-			display: inline-block;
-			width: 10px;
-			height: 10px;
-			margin: 0 6px;
-			background-color: #ccc;
-			border-radius: 50%;
-			cursor: pointer;
-		}
+        .slide-content .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6738, #ff4500);
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
 
-		.indicator-dot.active {
-			background-color: #fff;
-		}
+        .slide-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-		.page-overlay-with-image {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: url('images/back.jpg') center center / cover no-repeat, rgba(0, 0, 0, 0.5);
-			z-index: -1;
-			opacity: 0.5;
-			/* Adjust to control visibility */
-			pointer-events: none;
-			/* Allows clicks through the overlay */
-		}
-        @media screen and (max-width: 992px) {
-            .row{
-                flex-wrap:wrap;
-                margin-bottom:10vh !important;
+        .slide-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .slide-content .highlight {
+            color: #ff6738;
+            font-weight: 600;
+        }
+
+        .slide-content .btn-slide {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 35px;
+            background: linear-gradient(135deg, #ff6738, #ff4500);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slide-content .btn-slide:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 103, 56, 0.4);
+        }
+
+        /* ===== SLIDER CONTROLS ===== */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: #ff6738;
+            border-color: #ff6738;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-btn.prev {
+            left: 15px;
+        }
+
+        .slider-btn.next {
+            right: 15px;
+        }
+
+        /* ===== INDICATORS ===== */
+        .indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .indicator-dot.active {
+            background: #ff6738;
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(255, 103, 56, 0.5);
+        }
+
+        .indicator-dot:hover {
+            background: #ff6738;
+        }
+
+        /* ===== HOME / WELCOME SECTION ===== */
+        .home-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .home-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/back.jpg') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .home-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .home-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .home-text h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .home-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .home-text .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .home-text .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .home-text .feature-item:hover {
+            background: rgba(255, 103, 56, 0.15);
+            border-color: #ff6738;
+            transform: translateY(-2px);
+        }
+
+        .home-text .feature-item i {
+            color: #ff6738;
+            font-size: 20px;
+            width: 30px;
+        }
+
+        .home-text .feature-item span {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+
+        .home-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-image .image-placeholder {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255, 103, 56, 0.1), rgba(255, 69, 0, 0.05));
+            border: 2px solid rgba(255, 103, 56, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: rgba(255, 103, 56, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-image .image-placeholder::after {
+            content: '🚀';
+            font-size: 80px;
+            opacity: 0.3;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .slide-content h1 {
+                font-size: 2.5rem;
             }
-            .col-md-5{
-                border-radius:10px !important;
-                max-height:35%;
+
+            .home-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            .col-md-6{
-                max-height:50%;
-                margin-top:0vh !important;
+
+            .home-text .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .home-text h2 {
+                font-size: 2.5rem;
             }
         }
-         @media screen and (max-width: 768px) {
-            .row{
-                flex-wrap:wrap;
-                margin-bottom:10vh !important;
+
+        @media (max-width: 768px) {
+            .slides-wrapper {
+                height: 400px;
             }
-            .col-md-5{
-                border-radius:10px !important;
-                max-height:35%;
+
+            .slide {
+                padding: 30px 25px;
             }
-            .col-md-6{
-                max-height:50%;
-                margin-top:0vh !important;
+
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+
+            .slide-content p {
+                font-size: 1rem;
+            }
+
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .slider-btn.prev {
+                left: 8px;
+            }
+
+            .slider-btn.next {
+                right: 8px;
+            }
+
+            .home-text h2 {
+                font-size: 2rem;
+            }
+
+            .home-text .features {
+                grid-template-columns: 1fr;
             }
         }
-	</style>
+
+        @media (max-width: 480px) {
+            .slides-wrapper {
+                height: 350px;
+                border-radius: 12px;
+            }
+
+            .slide {
+                padding: 20px;
+            }
+
+            .slide-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .slide-content .badge {
+                font-size: 11px;
+                padding: 4px 14px;
+            }
+
+            .slide-content .btn-slide {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+
+            .slider-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+
+            .home-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .home-text p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 </head>
-<script>
-	window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-8M1V485WJ2');
-
-</script>
 
 <body>
-	<div class="page-overlay-with-image"></div>
-	<section class="container-fluid bg-dark col-md-12 d-flex p-0" style="overflow: hidden;margin-top:10vh" id="home">
-		<div class="row g-3 w-100 align-items-center">
-			<!-- Left Side -->
-			<div class="col-md-5 d-flex align-items-center p-5 text-dark" style="height:70%;background-color: #dbe9f4;margin-left:10px;border-bottom-left-radius:300px;border-top-right-radius:350px;">
-				<div class="banner-text">
-					<h1 class="display-4 mb-4"><b>Crafting solutions, Designing Futures, and Inspiring Learning</b></h1>
-					<p class="lead">We are dedicated to providing quality services that help you achieve your goals.</p>
-				</div>
-			</div>
-			<!-- Right Slider -->
-			<div class="col-md-6 slides-container position-relative" id="slider">
-				<!-- Slides -->
-				<div class="slide d-flex align-items-center p-5">
-					<div class="content">
-						<h1 class="display-4 mb-4">Welcome to Witty Highbrow Technologies</h1>
-						<p class="lead">We provide top-notch IT solutions and services.</p>
-					</div>
-				</div>
-				<div class="slide d-flex align-items-center p-5">
-					<div class="content">
-						<h1 class="display-4 mb-4">Web Development Services</h1>
-						<p>- Website & E-Commerce Development</p>
-						<p>- CMS, Hosting & SEO</p>
-						<p>- Maintenance & UI/UX Design</p>
-					</div>
-				</div>
-				<div class="slide d-flex align-items-center p-5">
-					<div class="content">
-						<h1 class="display-4 mb-4">Mobile App Development</h1>
-						<p>- Cross-Platform Apps</p>
-						<p>- Secure, Fast, User-friendly</p>
-						<p>- App Store Deployment</p>
-					</div>
-				</div>
-				<div class="slide d-flex align-items-center p-5">
-					<div class="content">
-						<h1 class="display-4 mb-4">Graphic Design</h1>
-						<p>- Brand Identity & Social Media Graphics</p>
-						<p>- Marketing & Print Design</p>
-					</div>
-				</div>
-				<div class="slide d-flex align-items-center p-5">
-					<div class="content">
-						<h1 class="display-4 mb-4">IT Consulting Services</h1>
-						<p>- Strategy, Cybersecurity & Cloud</p>
-						<p>- Risk Management & IT Support</p>
-					</div>
-				</div>
-				<!-- Arrows -->
-				<button class="prev position-absolute start-0 top-50 translate-middle-y btn btn-dark ms-3" onclick="prevSlide()" style="z-index: 100;">❮</button>
-                    <button class="next position-absolute end-0 top-50 translate-middle-y btn btn-dark me-3" onclick="nextSlide()" style="z-index: 100;">❯</button>
-                    <!-- Indicators -->
-                    <div class="indicators">
-                        <span class="indicator-dot active" onclick="showSlide(0)"></span>
-                        <span class="indicator-dot" onclick="showSlide(1)"></span>
-                        <span class="indicator-dot" onclick="showSlide(2)"></span>
-                        <span class="indicator-dot" onclick="showSlide(3)"></span>
-                        <span class="indicator-dot" onclick="showSlide(4)"></span>
+    <!-- ===== SLIDER SECTION ===== -->
+    <section class="slider-section" id="slider-section">
+        <div class="slider-container">
+            <div class="slides-wrapper" id="slider">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-content">
+                        <span class="badge">Welcome</span>
+                        <h1>Witty Highbrow Technologies</h1>
+                        <p>We provide top-notch IT solutions, web development, mobile apps, and graphic design services to help your business grow.</p>
+                        <a href="#home-section" class="btn-slide">Explore More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <span class="badge">Web Development</span>
+                        <h1>Build Your Online Presence</h1>
+                        <p>✓ Website & E-Commerce Development</p>
+                        <p>✓ CMS, Hosting & SEO Optimization</p>
+                        <p>✓ Maintenance & UI/UX Design</p>
+                        <a href="#" class="btn-slide" onclick="loadPage('web.html')">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <span class="badge">Mobile Apps</span>
+                        <h1>Mobile App Development</h1>
+                        <p>✓ Cross-Platform Apps (Android & iOS)</p>
+                        <p>✓ Secure, Fast, and User-friendly</p>
+                        <p>✓ App Store & Play Store Deployment</p>
+                        <a href="#" class="btn-slide" onclick="loadPage('mobile.html')">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <span class="badge">Graphic Design</span>
+                        <h1>Visual Identity & Branding</h1>
+                        <p>✓ Brand Identity & Logo Design</p>
+                        <p>✓ Social Media Graphics</p>
+                        <p>✓ Marketing & Print Design</p>
+                        <a href="#" class="btn-slide" onclick="loadPage('graphic.html')">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <span class="badge">IT Consulting</span>
+                        <h1>Expert IT Consulting</h1>
+                        <p>✓ IT Strategy & Digital Transformation</p>
+                        <p>✓ Cybersecurity & Risk Management</p>
+                        <p>✓ Cloud Solutions & IT Support</p>
+                        <a href="#" class="btn-slide" onclick="loadPage('infortech.html')">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="slider-btn prev" onclick="prevSlide()" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next" onclick="nextSlide()" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div class="indicators">
+                    <button class="indicator-dot active" onclick="showSlide(0)" aria-label="Slide 1"></button>
+                    <button class="indicator-dot" onclick="showSlide(1)" aria-label="Slide 2"></button>
+                    <button class="indicator-dot" onclick="showSlide(2)" aria-label="Slide 3"></button>
+                    <button class="indicator-dot" onclick="showSlide(3)" aria-label="Slide 4"></button>
+                    <button class="indicator-dot" onclick="showSlide(4)" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOME SECTION ===== -->
+    <section class="home-section" id="home-section">
+        <div class="home-container">
+            <div class="home-content">
+                <div class="home-text">
+                    <h2>Crafting Solutions, Designing Futures</h2>
+                    <p>We are dedicated to providing quality IT services that help you achieve your goals. With expertise in web development, mobile apps, graphic design, and IT consulting, we bring your ideas to life.</p>
+                    <p>Our team of passionate professionals is committed to delivering innovative solutions tailored to your needs.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-code"></i>
+                            <span>Web Development</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Apps</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Graphic Design</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>IT Consulting</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud Solutions</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Cybersecurity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-image">
+                    <div class="image-placeholder">
+                        <!-- You can replace this with an actual image -->
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Bootstrap & Scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M1V485WJ2"></script>
-        <script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.indicator-dot');
-  const totalSlides = slides.length;
+        </div>
+    </section>
 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.indicator-dot');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
 
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-    currentSlide = index;
-  }
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-  }
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
 
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(currentSlide);
-  }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+            resetAutoSlide();
+        }
 
-  setInterval(nextSlide, 5000); // Auto-slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+            resetAutoSlide();
+        }
 
-  // Touch swipe support
-  let startX = 0;
-  const slider = document.getElementById('slider');
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
 
-  slider.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
+        // Touch swipe support
+        let startX = 0;
+        const slider = document.getElementById('slider');
 
-  slider.addEventListener('touchend', (e) => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextSlide();     // Swipe Left
-    else if (endX - startX > 50) prevSlide(); // Swipe Right
-  });
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
 
-  document.addEventListener('DOMContentLoaded', () => showSlide(0));
-        </script>
-        <!-- Updated EmailJS SDK (v4) -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script type="text/javascript">
-     (function() {
-         emailjs.init({
-             publicKey: "fd8AssW6J5To9EUF0",
-             blockHeadless: true,
-             limitRate: {
-                 id: 'app',
-                 throttle: 10000
-             }
-         });
-     })();
-        </script>
-    </body>
+        slider.addEventListener('touchend', (e) => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) nextSlide();
+            else if (endX - startX > 50) prevSlide();
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(0);
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Function to load pages (for button links)
+        function loadPage(url) {
+            if (window.parent && window.parent.loadPage) {
+                window.parent.loadPage(url);
+            } else {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+
 </html>
