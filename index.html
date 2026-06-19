@@ -4,499 +4,556 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv='content-language' content='en-gb'>
-    <link rel="canonical" href="https://wittyhighbrowtechnologies.kesug.com/index.html">
+    <link rel="canonical" href="https://witty-highbrow-technologies.onrender.com/">
     <meta name="description" content="Offering comprehensive IT solutions, online learning resources, and business networking opportunities. Explore our services to enhance your digital experience and professional growth.">
     <meta name="google-site-verification" content="q0CaTjOHwmJonsjrRU-LM2mlW-7OyLOlx6BbDGJWMc4" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <title>Witty Highbrow Technologies | Home</title>
-</head>
-
-<style>
-    :root {
-        --primary-color: #ff6738;
-        --secondary-color: #dbe9f4;
-        --text-color: #333;
-        --white: #ffffff;
-        --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
-        --nav-height: 70px;
-        --footer-height: 60px;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', Arial, sans-serif;
-        background: #f5f7fa;
-        overflow: hidden; /* Prevent double scrollbars */
-    }
-
-    /* Navigation */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: var(--nav-height);
-        background: var(--secondary-color);
-        padding: 0 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        box-shadow: var(--shadow);
-        border-bottom: 3px solid var(--primary-color);
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--text-color);
-    }
-
-    .logo img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .logo h1 {
-        font-size: 20px;
-        font-weight: 600;
-        color: var(--text-color);
-        white-space: nowrap;
-    }
-
-    /* Navigation Links */
-    .navbar {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .navbar a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 15px;
-        padding: 8px 15px;
-        border-radius: 5px;
-        transition: var(--transition);
-        position: relative;
-    }
-
-    .navbar a i {
-        margin-right: 6px;
-    }
-
-    .navbar a:hover {
-        background: var(--primary-color);
-        color: var(--white);
-        transform: translateY(-2px);
-    }
-
-    .navbar a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: var(--primary-color);
-        transition: var(--transition);
-        transform: translateX(-50%);
-    }
-
-    .navbar a:hover::after {
-        width: 70%;
-    }
-
-    /* Social Icons */
-    .social {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-    }
-
-    .social a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: var(--white);
-        color: var(--text-color);
-        font-size: 18px;
-        transition: var(--transition);
-        text-decoration: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .social a:hover {
-        transform: translateY(-3px) scale(1.1);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .social a:hover .fa-tiktok { color: #000000; }
-    .social a:hover .fa-facebook { color: #1877f2; }
-    .social a:hover .fa-instagram { color: #e4405f; }
-    .social a:hover .fa-twitter { color: #000000; }
-    .social a:hover .fa-youtube { color: #ff0000; }
-    .social a:hover .fa-linkedin { color: #0a66c2; }
-
-    /* Menu Toggles */
-    .menu-toggle,
-    .menu-toggle1 {
-        cursor: pointer;
-        font-size: 24px;
-        display: none;
-        padding: 5px 10px;
-        background: var(--white);
-        border-radius: 5px;
-        transition: var(--transition);
-    }
-
-    .menu-toggle:hover,
-    .menu-toggle1:hover {
-        background: var(--primary-color);
-        color: var(--white);
-    }
-
-    /* Sidebar */
-    .sidebar {
-        width: 260px;
-        background: var(--secondary-color);
-        padding: 20px 15px;
-        position: fixed;
-        top: var(--nav-height);
-        left: 0;
-        bottom: 0;
-        transform: translateX(0);
-        transition: var(--transition);
-        z-index: 999;
-        overflow-y: auto;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        border-right: 2px solid var(--primary-color);
-        height: calc(100vh - var(--nav-height));
-    }
-
-    .sidebar.closed {
-        transform: translateX(-100%);
-    }
-
-    .sidebar a {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 15px;
-        color: var(--text-color);
-        text-decoration: none;
-        border-radius: 8px;
-        transition: var(--transition);
-        margin-bottom: 4px;
-        font-weight: 500;
-    }
-
-    .sidebar a i {
-        width: 20px;
-        text-align: center;
-    }
-
-    .sidebar a:hover {
-        background: var(--primary-color);
-        color: var(--white);
-        transform: translateX(5px);
-    }
-
-    .sidebar a.active {
-        background: var(--primary-color);
-        color: var(--white);
-    }
-
-    /* ========== FIXED CONTENT HEIGHT ========== */
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        padding-top: var(--nav-height);
-    }
-
-    .content1 {
-        flex: 1;
-        margin-left: 260px;
-        transition: var(--transition);
-        height: calc(100vh - var(--nav-height));
-        overflow: hidden;
-        position: relative;
-    }
-
-    .content1.expanded {
-        margin-left: 0;
-    }
-
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        background: var(--white);
-        display: block;
-    }
-
-    /* Footer */
-    .footer {
-        background: var(--text-color);
-        color: var(--white);
-        text-align: center;
-        padding: 10px 0;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        height: var(--footer-height);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top: 3px solid var(--primary-color);
-    }
-
-    .footer p {
-        margin: 0;
-        font-size: 14px;
-        opacity: 0.9;
-    }
-
-    /* ========== MOBILE RESPONSIVE ========== */
-    @media (max-width: 992px) {
-        .logo h1 {
-            font-size: 16px;
-        }
-        
-        .navbar {
-            gap: 10px;
-        }
-        
-        .navbar a {
-            font-size: 13px;
-            padding: 6px 12px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .sidebar {
-            transform: translateX(-100%);
-            width: 280px;
-            height: calc(100vh - var(--nav-height));
+    
+    <style>
+        :root {
+            --primary-color: #ff6738;
+            --secondary-color: #dbe9f4;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            --nav-height: 70px;
+            --footer-height: 60px;
         }
 
-        .sidebar.open {
-            transform: translateX(0);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .content1 {
-            margin-left: 0;
-            height: calc(100vh - var(--nav-height) - var(--footer-height));
+        html,
+        body {
+            height: 100%;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f5f7fa;
+            overflow: hidden;
         }
 
-        .menu-toggle {
-            display: block !important;
-        }
-        
-        .menu-toggle1 {
-            display: block !important;
-        }
-
-        .navbar {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: var(--nav-height);
+        /* ===== NAVIGATION ===== */
+        .custom-nav {
+            height: var(--nav-height);
+            background: var(--secondary-color);
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
             left: 0;
             right: 0;
-            background: var(--secondary-color);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            gap: 10px;
-            z-index: 1001;
+            z-index: 1030;
+            padding: 0 20px;
         }
 
-        .navbar.active {
+        .logo-brand {
             display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-color);
+            text-decoration: none;
         }
 
-        .navbar a {
-            width: 100%;
-            text-align: center;
-            padding: 10px;
+        .logo-brand img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
-        .social {
-            display: none;
+        .logo-brand h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        /* ===== NAV LINKS ===== */
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-links .nav-link-custom {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links .nav-link-custom i {
+            margin-right: 6px;
+        }
+
+        .nav-links .nav-link-custom:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .nav-links .nav-link-custom.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .nav-links .nav-link-custom::after {
+            content: '';
             position: absolute;
-            top: var(--nav-height);
+            bottom: 4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-links .nav-link-custom:hover::after {
+            width: 60%;
+        }
+
+        /* ===== FLYING SOCIAL BUTTON ===== */
+        .social-flyout {
+            position: relative;
+        }
+
+        .social-toggle-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--white);
+            border: none;
+            color: var(--text-color);
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-toggle-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        .social-toggle-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .social-dropdown {
+            position: absolute;
+            top: 52px;
             right: 0;
             background: var(--white);
-            padding: 15px;
-            border-radius: 0 0 0 10px;
-            box-shadow: var(--shadow);
-            flex-wrap: wrap;
-            width: 200px;
-            justify-content: center;
-            z-index: 1001;
+            border-radius: 12px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: none;
+            gap: 10px;
+            align-items: center;
+            min-width: 220px;
+            z-index: 1050;
+            animation: slideDown 0.3s ease;
         }
 
-        .social.active {
+        .social-dropdown.show {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .menu-toggle.hidden,
-        .menu-toggle1.hidden {
-            display: none !important;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
-        .close-btn {
-            display: block !important;
+        .social-dropdown .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: var(--text-color);
+            font-size: 16px;
+            transition: var(--transition);
+            text-decoration: none;
+            background: #f5f7fa;
         }
 
-        .footer {
+        .social-dropdown .social-link:hover {
+            transform: translateY(-3px) scale(1.15);
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .social-dropdown .social-link .fa-tiktok:hover {
+            color: #000;
+        }
+        .social-dropdown .social-link .fa-facebook:hover {
+            color: #1877f2;
+        }
+        .social-dropdown .social-link .fa-instagram:hover {
+            color: #e4405f;
+        }
+        .social-dropdown .social-link .fa-twitter:hover {
+            color: #000;
+        }
+        .social-dropdown .social-link .fa-youtube:hover {
+            color: #ff0000;
+        }
+        .social-dropdown .social-link .fa-linkedin:hover {
+            color: #0a66c2;
+        }
+
+        /* ===== MOBILE TOGGLES ===== */
+        .menu-toggle-btn {
+            cursor: pointer;
+            font-size: 24px;
+            padding: 5px 12px;
+            background: var(--white);
+            border: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            display: none;
+        }
+
+        .menu-toggle-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar-custom {
+            width: 260px;
+            background: var(--secondary-color);
+            padding: 20px 15px;
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            bottom: 0;
+            transform: translateX(0);
+            transition: var(--transition);
+            z-index: 1020;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+            border-right: 2px solid var(--primary-color);
+        }
+
+        .sidebar-custom.closed {
+            transform: translateX(-100%);
+        }
+
+        .sidebar-custom .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .sidebar-custom .sidebar-link i {
+            width: 22px;
+            text-align: center;
+        }
+
+        .sidebar-custom .sidebar-link:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .sidebar-custom .sidebar-link.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            margin-left: 260px;
+            padding-top: var(--nav-height);
+            height: 100vh;
+            transition: var(--transition);
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        .main-content iframe {
+            width: 100%;
+            height: calc(100vh - var(--nav-height));
+            border: none;
+            background: var(--white);
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        .custom-footer {
+            background: var(--text-color);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 0;
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
+            z-index: 100;
+            height: var(--footer-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 3px solid var(--primary-color);
         }
-    }
 
-    @media (max-width: 480px) {
-        .logo h1 {
+        .custom-footer p {
+            margin: 0;
             font-size: 14px;
-        }
-        
-        .logo img {
-            width: 35px;
-            height: 35px;
+            opacity: 0.9;
         }
 
-        .sidebar.open {
-            width: 100%;
-        }
-
-        .social a {
-            width: 32px;
-            height: 32px;
-            font-size: 14px;
-        }
-        
-        .content1 {
-            height: calc(100vh - var(--nav-height) - var(--footer-height));
-        }
-    }
-
-    .close-btn {
-        display: none;
-        cursor: pointer;
-        font-size: 30px;
-        padding: 5px 15px;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-    }
-</style>
-
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo.jpg" alt="Witty Highbrow Technologies Logo">
-                <h1>Witty Highbrow</h1>
-                <div class="menu-toggle1" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="menu-toggle" onclick="toggleSidebar()">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-
-
-<div class="navbar">
-    <a href="#" onclick="loadPage('start.html')" class="active">
-        <i class="fas fa-home"></i> Home
-    </a>
-    <a href="#" onclick="loadPage('about.html')">
-        <i class="fas fa-info-circle"></i> About
-    </a>
-    <a href="#" onclick="loadPage('services.html')">
-        <i class="fas fa-concierge-bell"></i> Services
-    </a>
-    <a href="#" onclick="loadPage('contact.html')">
-        <i class="fas fa-envelope"></i> Contact
-    </a>
-</div>
-
-        </nav>
-    </header>
-
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <a href="#" onclick="loadPage('start.html'); setActiveLink(this)">
-            <i class="fas fa-home"></i>Home
-        </a>
-        <a href="#" onclick="loadPage('graphic.html'); setActiveLink(this)">
-            <i class="fas fa-paint-brush"></i>Graphic Design
-        </a>
-        <a href="#" onclick="loadPage('web.html'); setActiveLink(this)">
-            <i class="fas fa-code"></i>Web Development
-        </a>
-        <a href="#" onclick="loadPage('mobile.html'); setActiveLink(this)">
-            <i class="fas fa-mobile-alt"></i>Android Development
-        </a>
-        <a href="#" onclick="loadPage('infortech.html'); setActiveLink(this)">
-            <i class="fas fa-briefcase"></i>IT Consultancy
-        </a>
-        <a href="#" onclick="loadPage('gallery.php'); setActiveLink(this)">
-            <i class="fas fa-images"></i>Our Designs
-        </a>
-        <a href="https://jacobwitty.fwh.is" target="_blank">
-            <i class="fas fa-user-tie"></i>CEO's Portfolio
-        </a>
-        <a href="https://linktr.ee/jacob_witty" target="_blank">
-            <i class="fas fa-link"></i>CEO's Links Tree
-        </a>
-    </div>
-
-    <!-- Main Content -->
-    <div class="content1" id="mainContent">
-        <iframe id="page-frame" src="start.html" title="Main Content"></iframe>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2025 Witty Highbrow Technologies. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function loadPage(url) {
-            document.getElementById("page-frame").src = url;
-            if (window.innerWidth <= 768) {
-                document.querySelector('.navbar').classList.remove('active');
-                document.querySelector('.social').classList.remove('active');
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .logo-brand h1 {
+                font-size: 16px;
+            }
+            .nav-links .nav-link-custom {
+                font-size: 13px;
+                padding: 6px 12px;
             }
         }
 
+        @media (max-width: 768px) {
+            .sidebar-custom {
+                transform: translateX(-100%);
+                width: 280px;
+            }
+            .sidebar-custom.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .menu-toggle-btn {
+                display: block !important;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: var(--secondary-color);
+                padding: 20px;
+                box-shadow: var(--shadow);
+                gap: 8px;
+                z-index: 1040;
+                border-bottom: 2px solid var(--primary-color);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links .nav-link-custom {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+            }
+            .social-flyout {
+                display: none;
+            }
+            .social-flyout.mobile-show {
+                display: block;
+            }
+            .social-dropdown {
+                position: fixed;
+                top: auto;
+                bottom: 80px;
+                right: 20px;
+                left: 20px;
+                min-width: auto;
+                justify-content: center;
+                padding: 15px;
+            }
+            .social-dropdown .social-link {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-brand h1 {
+                font-size: 14px;
+            }
+            .logo-brand img {
+                width: 35px;
+                height: 35px;
+            }
+            .sidebar-custom.open {
+                width: 100%;
+            }
+        }
+
+        /* Utility */
+        .d-none-custom {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="custom-nav d-flex align-items-center justify-content-between">
+        <!-- Logo -->
+        <a href="#" class="logo-brand" onclick="loadPage('start.html')">
+            <img src="images/logo.jpg" alt="Witty Highbrow Technologies Logo">
+            <h1>Witty Highbrow Technologies</h1>
+        </a>
+
+        <!-- Nav Links -->
+        <div class="nav-links" id="navLinks">
+            <a href="#" class="nav-link-custom active" onclick="loadPage('start.html')">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" class="nav-link-custom" onclick="loadPage('about.html')">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="#" class="nav-link-custom" onclick="loadPage('services.html')">
+                <i class="fas fa-concierge-bell"></i> Services
+            </a>
+            <a href="#" class="nav-link-custom" onclick="loadPage('contact.html')">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </div>
+
+        <!-- Right Side: Social Flyout + Mobile Toggles -->
+        <div class="d-flex align-items-center gap-2">
+            <!-- Social Flyout Button -->
+            <div class="social-flyout" id="socialFlyout">
+                <button class="social-toggle-btn" id="socialToggle" onclick="toggleSocial()">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <div class="social-dropdown" id="socialDropdown">
+                    <a href="https://www.tiktok.com/@jacob_witty" target="_blank" class="social-link" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://web.facebook.com/James.Mwambwa" target="_blank" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/jacob__witty/" target="_blank" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/Jacob_witty4" target="_blank" class="social-link" aria-label="Twitter/X">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Jacob_Witty" target="_blank" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jacob-witty-b07a22349/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle Buttons -->
+            <button class="menu-toggle-btn" id="menuToggle1" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="menu-toggle-btn" id="menuToggle2" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar-custom" id="sidebar">
+        <a href="#" class="sidebar-link active" onclick="loadPage('start.html'); setActiveLink(this)">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="#" class="sidebar-link" onclick="loadPage('graphic.html'); setActiveLink(this)">
+            <i class="fas fa-paint-brush"></i> Graphic Design
+        </a>
+        <a href="#" class="sidebar-link" onclick="loadPage('web.html'); setActiveLink(this)">
+            <i class="fas fa-code"></i> Web Development
+        </a>
+        <a href="#" class="sidebar-link" onclick="loadPage('mobile.html'); setActiveLink(this)">
+            <i class="fas fa-mobile-alt"></i> Android Development
+        </a>
+        <a href="#" class="sidebar-link" onclick="loadPage('infortech.html'); setActiveLink(this)">
+            <i class="fas fa-briefcase"></i> IT Consultancy
+        </a>
+        <a href="#" class="sidebar-link" onclick="loadPage('gallery.php'); setActiveLink(this)">
+            <i class="fas fa-images"></i> Our Designs
+        </a>
+        <a href="https://j-w-projects.onrender.com" target="_blank" class="sidebar-link">
+            <i class="fas fa-user-tie"></i> CEO's Portfolio
+        </a>
+        <a href="https://linktr.ee/jacob_witty" target="_blank" class="sidebar-link">
+            <i class="fas fa-link"></i> CEO's Links Tree
+        </a>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="main-content" id="mainContent">
+        <iframe id="page-frame" src="start.html" title="Main Content"></iframe>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="custom-footer">
+        <p>&copy; 2025 Witty Highbrow Technologies. All rights reserved.</p>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // ===== NAVIGATION FUNCTIONS =====
+        function loadPage(url) {
+            document.getElementById("page-frame").src = url;
+            // Close mobile menus
+            if (window.innerWidth <= 768) {
+                document.getElementById('navLinks').classList.remove('show');
+                document.getElementById('socialDropdown').classList.remove('show');
+                document.getElementById('socialToggle').classList.remove('active');
+            }
+        }
+
+        // ===== SIDEBAR TOGGLE =====
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const content = document.getElementById('mainContent');
@@ -504,34 +561,63 @@
             content.classList.toggle('expanded');
         }
 
+        // ===== SIDEBAR ACTIVE LINK =====
         function setActiveLink(link) {
-            const links = document.querySelectorAll('.sidebar a');
+            const links = document.querySelectorAll('.sidebar-custom .sidebar-link');
             links.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
         }
 
-        function toggleMenu() {
-            const navbar = document.querySelector('.navbar');
-            const social = document.querySelector('.social');
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuToggle1 = document.querySelector('.menu-toggle1');
+        // ===== MOBILE NAV TOGGLE =====
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
             
-            navbar.classList.toggle('active');
-            social.classList.toggle('active');
-            menuToggle.classList.toggle('hidden');
-            menuToggle1.classList.toggle('hidden');
+            // Close social dropdown when opening nav
+            if (navLinks.classList.contains('show')) {
+                document.getElementById('socialDropdown').classList.remove('show');
+                document.getElementById('socialToggle').classList.remove('active');
+            }
         }
 
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebar');
-            const menuToggle = document.querySelector('.menu-toggle');
+        // ===== SOCIAL FLYOUT TOGGLE =====
+        function toggleSocial() {
+            const dropdown = document.getElementById('socialDropdown');
+            const toggle = document.getElementById('socialToggle');
             
+            dropdown.classList.toggle('show');
+            toggle.classList.toggle('active');
+            
+            // Close mobile nav when opening social
+            if (dropdown.classList.contains('show')) {
+                document.getElementById('navLinks').classList.remove('show');
+            }
+        }
+
+        // ===== CLOSE ON CLICK OUTSIDE =====
+        document.addEventListener('click', function(event) {
+            const socialFlyout = document.getElementById('socialFlyout');
+            const dropdown = document.getElementById('socialDropdown');
+            const toggle = document.getElementById('socialToggle');
+            const navLinks = document.getElementById('navLinks');
+            const sidebar = document.getElementById('sidebar');
+
+            // Close social dropdown if clicking outside
+            if (!socialFlyout.contains(event.target)) {
+                dropdown.classList.remove('show');
+                toggle.classList.remove('active');
+            }
+
+            // Close mobile nav on outside click
             if (window.innerWidth <= 768) {
-                const isClickInsideSidebar = sidebar.contains(event.target);
-                const isClickOnToggle = menuToggle.contains(event.target);
-                
-                if (!isClickInsideSidebar && !isClickOnToggle) {
+                const menuToggle1 = document.getElementById('menuToggle1');
+                if (!navLinks.contains(event.target) && !menuToggle1.contains(event.target)) {
+                    navLinks.classList.remove('show');
+                }
+
+                // Close sidebar on outside click
+                const menuToggle2 = document.getElementById('menuToggle2');
+                if (!sidebar.contains(event.target) && !menuToggle2.contains(event.target)) {
                     if (sidebar.classList.contains('open')) {
                         sidebar.classList.remove('open');
                         document.getElementById('mainContent').classList.remove('expanded');
@@ -540,16 +626,29 @@
             }
         });
 
-        // Handle resize
+        // ===== HANDLE RESIZE =====
         window.addEventListener('resize', function() {
             const sidebar = document.getElementById('sidebar');
             const content = document.getElementById('mainContent');
-            
+            const navLinks = document.getElementById('navLinks');
+            const dropdown = document.getElementById('socialDropdown');
+            const toggle = document.getElementById('socialToggle');
+
             if (window.innerWidth > 768) {
                 sidebar.classList.remove('open');
                 content.classList.remove('expanded');
-                document.querySelector('.navbar').classList.remove('active');
-                document.querySelector('.social').classList.remove('active');
+                navLinks.classList.remove('show');
+                dropdown.classList.remove('show');
+                toggle.classList.remove('active');
+            }
+        });
+
+        // ===== CLOSE SOCIAL ON ESCAPE KEY =====
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('socialDropdown').classList.remove('show');
+                document.getElementById('socialToggle').classList.remove('active');
+                document.getElementById('navLinks').classList.remove('show');
             }
         });
     </script>
