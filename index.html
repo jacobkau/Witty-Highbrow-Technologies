@@ -2,430 +2,553 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv='content-language' content='en-gb'>
-	<link rel="canonical" href="https://wittyhighbrowtechnologies.kesug.com/index.html">
-	<meta name="description" content="Offering comprehensive IT solutions, online learning resources, and business networking opportunities. Explore our services to enhance your digital experience and professional growth.">
-	<meta name="google-site-verification" content="q0CaTjOHwmJonsjrRU-LM2mlW-7OyLOlx6BbDGJWMc4" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<title>Witty Highbrow Technologies | Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv='content-language' content='en-gb'>
+    <link rel="canonical" href="https://wittyhighbrowtechnologies.kesug.com/index.html">
+    <meta name="description" content="Offering comprehensive IT solutions, online learning resources, and business networking opportunities. Explore our services to enhance your digital experience and professional growth.">
+    <meta name="google-site-verification" content="q0CaTjOHwmJonsjrRU-LM2mlW-7OyLOlx6BbDGJWMc4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <!-- Use Font Awesome for icons (more reliable than SVG files) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Witty Highbrow Technologies | Home</title>
 </head>
 
 <style>
-	body {
-		margin: 0;
-		font-family: Arial, sans-serif;
-		display: flex;
-		height: 100vh;
-		overflow: hidden;
-	}
+    :root {
+        --primary-color: #ff6738;
+        --secondary-color: #dbe9f4;
+        --text-color: #333;
+        --white: #ffffff;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
 
-	.sidebar {
-		width: 250px;
-		color: #dbe9f4;
-		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 5px;
-		position: absolute;
-		transition: transform 0.3s ease;
-		transform: translateX(-100%);
-	}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-	.sidebar.open {
-		position: relative;
-		background-color: #dbe9f4;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		border-radius: 10px;
-		margin-top: 80px;
-		z-index: 0;
-		height: 90%;
-		transform: translateX(0);
-		transition: transform 0.5 ease;
-	}
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #f5f7fa;
+    }
 
-	.sidebar.closed {
-		transform: translateX(-100%);
-		background-color: #dbe9f4;
-	}
+    /* Navigation */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 70px;
+        background: var(--secondary-color);
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+        border-bottom: 3px solid var(--primary-color);
+    }
 
-	.sidebar a {
-		text-decoration: none;
-		width: 100%;
-		color: #000;
-		padding: 10px;
-		display: block;
-		border-radius: 5px;
-		text-align: left;
-		transition: 0.3s;
-	}
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-color);
+    }
 
-	.sidebar a.active {
-		background-color: #ff6738;
-		color: white;
-	}
+    .logo img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
-	.sidebar a:hover {
-		background: #ff6738;
-		width: 100%;
-	}
+    .logo h1 {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-color);
+    }
 
-	.content1 {
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		width: calc(100% - 250px);
-	}
+    /* Navigation Links */
+    .navbar {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
 
-	.sidebar.closed~.content1 {
-		width: 100%;
-	}
+    .navbar a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: var(--transition);
+        position: relative;
+    }
 
-	iframe {
-		width: 100%;
-		height: 100%;
-		border: none;
-	}
+    .navbar a i {
+        margin-right: 6px;
+    }
 
-	.sidebar.closed~.content1 iframe {
-		width: 100%;
-	}
+    .navbar a:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        transform: translateY(-2px);
+    }
 
-	nav {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		min-height: 8vh;
-		background-color: #dbe9f4;
-		font-family: "Poppins", sans-serif;
-		flex-wrap: wrap;
-		flex-shrink: 1;
-		z-index: 1;
-		width: 100%;
-		position: fixed;
-		border-bottom: 2px solid #ff6738;
-		overflow-x: auto;
-	}
+    .navbar a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: var(--transition);
+        transform: translateX(-50%);
+    }
 
-	h1 {
-		color: #333;
-		font-size: 24px;
-		font-weight: bold;
-	}
+    .navbar a:hover::after {
+        width: 70%;
+    }
 
-	.logo {
-		color: #333;
-		gap: 10px;
-		font-size: 20px;
-		padding: 10px;
-		align-items: center;
-		display: flex;
-		justify-content: center;
-	}
+    /* Social Icons - FIXED */
+    .social {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
 
-	.logo img {
-		width: 40px;
-		height: 40px;
-	}
+    .social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--white);
+        color: var(--text-color);
+        font-size: 18px;
+        transition: var(--transition);
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-	nav li {
-		display: flex;
-		justify-content: space-around;
-		width: 50%;
-		list-style: none;
-	}
+    .social a:hover {
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
 
-	.social {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		gap: 10px;
-		padding: 10px;
-		border-radius: 5px;
-	}
+    /* Individual social colors on hover */
+    .social a:hover .fa-tiktok { color: #000000; }
+    .social a:hover .fa-facebook { color: #1877f2; }
+    .social a:hover .fa-instagram { color: #e4405f; }
+    .social a:hover .fa-twitter { color: #000000; }
+    .social a:hover .fa-youtube { color: #ff0000; }
+    .social a:hover .fa-linkedin { color: #0a66c2; }
 
-	.social img {
-		width: 30px;
-		height: 30px;
-	}
+    /* Menu Toggles */
+    .menu-toggle,
+    .menu-toggle1 {
+        cursor: pointer;
+        font-size: 24px;
+        display: none;
+        padding: 5px 10px;
+        background: var(--white);
+        border-radius: 5px;
+        transition: var(--transition);
+    }
 
-	.navbar {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		min-height: 6vh;
-		width: 30%;
-		flex-wrap: wrap;
-		gap: 8px;
-		font-family: "Poppins", sans-serif;
-		border-bottom: 2px #ff6738;
-	}
+    .menu-toggle:hover,
+    .menu-toggle1:hover {
+        background: var(--primary-color);
+        color: var(--white);
+    }
 
-	.navbar a {
-		color: #333;
-		text-decoration: none;
-		font-weight: bold;
-		font-size: 18px;
-		display: inline-flex;
-		justify-content: space-around;
-		position: relative;
-		padding: 10px;
-		transition: background-color 2s ease;
-	}
+    /* Sidebar */
+    .sidebar {
+        width: 260px;
+        background: var(--secondary-color);
+        padding: 20px 15px;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        transition: var(--transition);
+        z-index: 999;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-	.navbar a::after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -5px;
-		width: 0;
-		height: 2px;
-		background-color: #ff6738;
-		transition: width 0.5s ease;
-	}
+    .sidebar.open {
+        transform: translateX(0);
+    }
 
-	.sidebar i {
-		margin-right: 15px;
-	}
+    .sidebar a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 15px;
+        color: var(--text-color);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: var(--transition);
+        margin-bottom: 4px;
+        font-weight: 500;
+    }
 
-	.navbar a:hover {
-		background-color: #ff6738;
-		border-radius: 5px;
-	}
+    .sidebar a i {
+        width: 20px;
+        text-align: center;
+    }
 
-	.navbar a:hover::after {
-		width: 100%;
-	}
+    .sidebar a:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        transform: translateX(5px);
+    }
 
-	.menu-toggle {
-		position: absolute;
-		cursor: pointer;
-		left: 2%;
-		font-size: 27px;
-		background-color: #dbe9f4;
-		border-radius: 1px solid #000;
-	}
+    .sidebar a.active {
+        background: var(--primary-color);
+        color: var(--white);
+    }
 
-	@media (max-width: 992px) {
-		.sidebar.open {
-			margin-top: 10vh;
-		}
-        .content1{margin-bottom:4vh;
-        margin-top:4vh}
-	}
+    /* Content */
+    .content1 {
+        flex: 1;
+        margin-top: 70px;
+        margin-left: 0;
+        transition: var(--transition);
+        height: calc(100vh - 70px);
+    }
 
-	@media (max-width: 768px) {
-		.navbar,
-		.social {
-			display: none;
-			/* Hide navbar and social links by default */
-		}
+    .content1.shifted {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
 
-		.navbar.active,
-		.social.active {
-			display: flex;
-			/* Show when toggled */
-			align-items: center;
-			width: 100%;
-			padding: none;
-			background-color: #dbe9f4;
-		}
-		.menu-toggle1 {
-			cursor: pointer;
-			background-color: #dbe9f4;
-			border-radius: 1px solid #000;
-			height: 30px;
-			right: 10px;
-			position: absolute;
-			font-size: 30px;
-			width: 30px;
-			margin-top: 10vh;
-		}
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: var(--white);
+    }
 
-		.logo {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			height: 15vh;
-		}
-		.menu-toggle {
-			position: absolute;
-			left: 10px;
-			font-size: 30px;
-			margin-top: 10vh;
-			width: 30px;
-		}
-		.menu-toggle.hidden,
-		.menu-toggle1.hidden {
-			display: none;
-		}
-		.sidebar.open {
-			position: absolute;
-			margin-top: 15vh;
-		}
-		.footer {
-			position: fixed;
-			bottom: 0;
-			width: 100%;
-			background-color: #333;
-			color: #fff;
-			text-align: center;
+    /* Footer */
+    .footer {
+        background: var(--text-color);
+        color: var(--white);
+        text-align: center;
+        padding: 15px 0;
+        position: relative;
+        margin-top: auto;
+    }
 
-		}
-		.close-btn {
-			cursor: pointer;
-			font-size: 30px;
-			align-self: flex-end;
-			padding: 15px;
-		}
-	}
+    .footer p {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.9;
+    }
 
-	@media (min-width: 769px) {
-		.menu-toggle1,
-		.close-btn {
-			display: none !important;
-		}
-	}
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .logo h1 {
+            font-size: 16px;
+        }
+        
+        .navbar {
+            gap: 10px;
+        }
+        
+        .navbar a {
+            font-size: 13px;
+            padding: 6px 12px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block !important;
+        }
+        
+        .menu-toggle1 {
+            display: block !important;
+        }
+
+        .navbar {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--secondary-color);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            gap: 10px;
+        }
+
+        .navbar.active {
+            display: flex;
+        }
+
+        .navbar a {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .social {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background: var(--white);
+            padding: 15px;
+            border-radius: 0 0 0 10px;
+            box-shadow: var(--shadow);
+            flex-wrap: wrap;
+            width: 200px;
+            justify-content: center;
+        }
+
+        .social.active {
+            display: flex;
+        }
+
+        .sidebar.open {
+            width: 280px;
+        }
+
+        .content1.shifted {
+            margin-left: 0;
+        }
+
+        .menu-toggle.hidden,
+        .menu-toggle1.hidden {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 14px;
+        }
+        
+        .logo img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .sidebar.open {
+            width: 100%;
+        }
+
+        .social a {
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+        }
+    }
+
+    /* Close button for mobile */
+    .close-btn {
+        display: none;
+        cursor: pointer;
+        font-size: 30px;
+        padding: 5px 15px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .close-btn {
+            display: block !important;
+        }
+    }
 </style>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8M1V485WJ2">
-
-</script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8M1V485WJ2');
-
-</script>
 
 <body>
-	<header>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Witty Highbrow Technologies Logo">
+                <h1>Witty Highbrow</h1>
+                <div class="menu-toggle1" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
 
-		<nav>
+            <div class="navbar">
+                <a href="#" onclick="loadPage('start.html')">
+                    <i class="fas fa-home"></i>Home
+                </a>
+                <a href="#" onclick="loadPage('about.html')">
+                    <i class="fas fa-info-circle"></i>About
+                </a>
+                <a href="#" onclick="loadPage('contact.html')">
+                    <i class="fas fa-envelope"></i>Contact
+                </a>
+                <a href="#" onclick="loadPage('services.html')">
+                    <i class="fas fa-concierge-bell"></i>Services
+                </a>
+            </div>
 
-			<div class="logo">
-				<img src="images/logo.jpg" alt>
-        <h1>Witty Highbrow Technologies</h1>
-        <div class="menu-toggle1" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="menu-toggle" onclick="toggleSidebar()">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
+            <!-- FIXED: Using Font Awesome icons instead of SVG files -->
+            <div class="social">
+                <a href="https://www.tiktok.com/@jacob_witty" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://web.facebook.com/James.Mwambwa" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/jacob__witty/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/Jacob_witty4" target="_blank" aria-label="Twitter/X">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@Jacob_Witty" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jacob-witty-b07a22349/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <span class="close-btn" onclick="toggleMenu()">&times;</span>
+            </div>
+        </nav>
+    </header>
 
-      <div class="navbar">
-        <a href="#" onclick="loadPage('start.html')">
-          <i class="fas fa-home"></i>&nbsp;Home
-        </a>
-        <a href="#" onclick="loadPage('about.html')">
-          <i class="fas fa-info-circle"></i>&nbsp;About
-        </a>
-        <a href="#" onclick="loadPage('contact.html')">
-          <i class="fas fa-envelope"></i>&nbsp;Contact
-        </a>
-        <a href="#" onclick="loadPage('services.html')">
-          <i class="fas fa-concierge-bell"></i>&nbsp;Services
-        </a>
-      </div>
-      <div class="social">
-        <a href="https://www.tiktok.com/@jacob_witty">
-          <img src="icons/icons8-tiktok.svg" alt="tiktok">
-        </a>
-        <a href="https://web.facebook.com/James.Mwambwa">
-          <img src="icons/icons8-facebook.svg" alt>
-        </a>
-        <a href="https://www.instagram.com/jacob__witty/">
-          <img src="icons/icons8-instagram-logo.svg" alt>
-        </a>
-        <a href="https://x.com/Jacob_witty4">
-          <img src="icons/icons8-twitter-logo.svg" alt>
-        </a>
-        <a href="https://www.youtube.com/@Jacob_Witty">
-          <img src="icons/icons8-youtube-logo.svg" alt>
-        </a>
-        <a href="https://www.linkedin.com/in/jacob-witty-b07a22349/">
-          <img src="icons/icons8-linkedin.svg" alt>
-        </a>
-        <span class="close-btn" onclick="toggleMenu()">&times;</span>
-      </div>
-    </nav>
-  </header>
     <div class="sidebar">
-      <a href="#" onclick="loadPage('start.html'); setActiveLink(this)">
-        <i class="fas fa-home"></i>Home
-      </a>
-      <a href="#" onclick="loadPage('graphic.html'); setActiveLink(this)">
-        <i class="fas fa-paint-brush"></i>Graphic Design
-      </a>
-      <a href="#" onclick="loadPage('web.html'); setActiveLink(this)">
-        <i class="fas fa-code"></i>Web Development
-      </a>
-      <a href="#" onclick="loadPage('mobile.html'); setActiveLink(this)">
-        <i class="fas fa-mobile-alt"></i>Android Development
-      </a>
-      <a href="#" onclick="loadPage('infortech.html'); setActiveLink(this)">
-        <i class="fas fa-briefcase"></i>IT Consultancy</a>
-      <a href="#" onclick="loadPage('gallery.php'); setActiveLink(this)">
-        <i class="fas fa-images"></i>Our Designs
-      </a>
-<a href="https://jacobwitty.fwh.is" target="_blank"><i class="fa fa-arrows-alt"></i>CEO's Portfolio</a>
-      <a href="https://linktr.ee/jacob_witty" target="_blank">
-        <i class="fa fa-link"></i> CEO's Links Tree
-      </a>
+        <a href="#" onclick="loadPage('start.html'); setActiveLink(this)">
+            <i class="fas fa-home"></i>Home
+        </a>
+        <a href="#" onclick="loadPage('graphic.html'); setActiveLink(this)">
+            <i class="fas fa-paint-brush"></i>Graphic Design
+        </a>
+        <a href="#" onclick="loadPage('web.html'); setActiveLink(this)">
+            <i class="fas fa-code"></i>Web Development
+        </a>
+        <a href="#" onclick="loadPage('mobile.html'); setActiveLink(this)">
+            <i class="fas fa-mobile-alt"></i>Android Development
+        </a>
+        <a href="#" onclick="loadPage('infortech.html'); setActiveLink(this)">
+            <i class="fas fa-briefcase"></i>IT Consultancy
+        </a>
+        <a href="#" onclick="loadPage('gallery.php'); setActiveLink(this)">
+            <i class="fas fa-images"></i>Our Designs
+        </a>
+        <a href="https://jacobwitty.fwh.is" target="_blank">
+            <i class="fas fa-user-tie"></i>CEO's Portfolio
+        </a>
+        <a href="https://linktr.ee/jacob_witty" target="_blank">
+            <i class="fas fa-link"></i>CEO's Links Tree
+        </a>
     </div>
-    <div class="content1">
-      <iframe id="page-frame" src="start.html"></iframe>
+
+    <div class="content1" id="mainContent">
+        <iframe id="page-frame" src="start.html" title="Main Content"></iframe>
     </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Witty Highbrow Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
         function loadPage(url) {
-          document.getElementById("page-frame").src = url;
-        }
-  
-        function toggleSidebar() {
-          const sidebar = document.querySelector('.sidebar');
-          const content = document.querySelector('.content1');
-          sidebar.classList.toggle('open');
-          content.classList.toggle('closed');
-        }
-  
-        // Function to highlight the active link
-        function setActiveLink(link) {
-          const links = document.querySelectorAll('.sidebar a'); // Select all sidebar links
-          links.forEach(link => link.classList.remove('active')); // Remove 'active' class from all links
-          link.classList.add('active'); // Add 'active' class to the clicked link
-        }
-  
-        // Modify loadPage function to set the active link
-        function loadPage(url) {
-          document.getElementById("page-frame").src = url;
-          const links = document.querySelectorAll('.sidebar a');
-          links.forEach(link => {
-            // If the link href matches the URL, set it as active
-            if (link.getAttribute('href') === `#${url.split('.')[0]}`) {
-              setActiveLink(link);
+            document.getElementById("page-frame").src = url;
+            // Close mobile menu after navigation
+            if (window.innerWidth <= 768) {
+                document.querySelector('.navbar').classList.remove('active');
+                document.querySelector('.social').classList.remove('active');
             }
-          });
         }
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.querySelector('.content1');
+            sidebar.classList.toggle('open');
+            content.classList.toggle('shifted');
+        }
+
+        function setActiveLink(link) {
+            const links = document.querySelectorAll('.sidebar a');
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+
         function toggleMenu() {
-        document.querySelector('.navbar').classList.toggle('active');
-        document.querySelector('.social').classList.toggle('active');
-        document.querySelector('.menu-toggle').classList.toggle('hidden');
-        document.querySelector('.menu-toggle1').classList.toggle('hidden');
-      }
-      </script>
-    <script src="js/script.js" defer></script>
-  </body>
-  <footer class="footer">
-    <div class="footer-container">
-      <p>&copy; 2025 Witty Highbrow Technologies. All rights reserved.</p>
-    </div>
-  </footer>
+            const navbar = document.querySelector('.navbar');
+            const social = document.querySelector('.social');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuToggle1 = document.querySelector('.menu-toggle1');
+            
+            navbar.classList.toggle('active');
+            social.classList.toggle('active');
+            menuToggle.classList.toggle('hidden');
+            menuToggle1.classList.toggle('hidden');
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            
+            if (window.innerWidth <= 768 && !isClickInsideSidebar && !isClickOnToggle) {
+                if (sidebar.classList.contains('open')) {
+                    sidebar.classList.remove('open');
+                    document.querySelector('.content1').classList.remove('shifted');
+                }
+            }
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const social = document.querySelector('.social');
+            const menuToggle1 = document.querySelector('.menu-toggle1');
+            
+            if (window.innerWidth <= 768) {
+                const isClickInsideNav = navbar.contains(event.target);
+                const isClickInsideSocial = social.contains(event.target);
+                const isClickOnToggle = menuToggle1.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickInsideSocial && !isClickOnToggle) {
+                    navbar.classList.remove('active');
+                    social.classList.remove('active');
+                    document.querySelector('.menu-toggle').classList.remove('hidden');
+                    document.querySelector('.menu-toggle1').classList.remove('hidden');
+                }
+            }
+        });
+
+        // Handle resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('.navbar').classList.remove('active');
+                document.querySelector('.social').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('hidden');
+                document.querySelector('.menu-toggle1').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+
 </html>
