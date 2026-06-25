@@ -30,12 +30,20 @@
             z-index: 1;
         }
         .page-header h1 {
-            font-size: 3rem;
+            font-size: 24px;
             font-weight: 700;
             color: #333;
             margin-bottom: 5px;
         }
-       
+       overlay1{
+           position:fixed;
+           top:0;
+           left:0;
+           right:0;
+           bottom:0;
+           background:rgba(0,0,0,0.9);
+           z-index:-1;
+       }
         .services-section {
             padding: 60px 20px;
             background: #dbe9f4;
@@ -369,6 +377,7 @@
     </style>
 </head>
 <body>
+    <div class="overlay1"></div>
     <div class="page-wrapper">
     <div class="page-header">
         <div class="container">
