@@ -433,6 +433,24 @@
             color: var(--white);
         }
 
+        /* ===== MOBILE SIDEBAR TOGGLE (VISIBLE ON MOBILE) ===== */
+        .mobile-sidebar-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 5px 12px;
+            background: var(--white);
+            border: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            color: var(--text-color);
+        }
+
+        .mobile-sidebar-toggle:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .logo-brand h1 {
@@ -445,6 +463,16 @@
         }
 
         @media (max-width: 768px) {
+            /* Show mobile sidebar toggle button */
+            .mobile-sidebar-toggle {
+                display: block !important;
+            }
+
+            /* Hide desktop sidebar toggle inside sidebar on mobile */
+            .sidebar-custom .sidebar-toggle-btn {
+                display: none !important;
+            }
+
             .sidebar-custom {
                 transform: translateX(-100%);
                 width: var(--sidebar-width);
@@ -481,12 +509,6 @@
             .sidebar-custom.collapsed .sidebar-divider {
                 display: block;
             }
-            .sidebar-custom.collapsed .sidebar-toggle-btn {
-                width: 100px;
-            }
-            .sidebar-custom.collapsed .sidebar-toggle-btn .toggle-text {
-                display: inline;
-            }
             
             .main-content {
                 margin-left: 0;
@@ -522,7 +544,6 @@
                 padding: 12px;
             }
             
-            /* FIX 1: Social links visible on mobile */
             .social-flyout {
                 display: block !important;
             }
@@ -541,28 +562,6 @@
                 width: 42px;
                 height: 42px;
                 font-size: 18px;
-            }
-            
-            /* FIX 3: Show sidebar toggle on mobile - placed inside sidebar */
-            .sidebar-toggle-btn {
-                display: flex !important;
-            }
-            
-            /* Mobile sidebar toggle button position */
-            .sidebar-custom .sidebar-toggle-btn {
-                position: relative;
-                bottom: auto;
-                left: auto;
-                transform: none;
-                margin: 20px auto 0;
-                width: 100px;
-            }
-            
-            .sidebar-custom.collapsed .sidebar-toggle-btn {
-                width: 100px;
-            }
-            .sidebar-custom.collapsed .sidebar-toggle-btn .toggle-text {
-                display: inline;
             }
         }
 
@@ -648,9 +647,14 @@
                 </div>
             </div>
 
+            <!-- Mobile Sidebar Toggle Button (visible on small screens) -->
+            <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" onclick="toggleSidebarMobile()" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <!-- Mobile Menu Toggle Button -->
             <button class="menu-toggle-btn" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-chevron-down"></i>
             </button>
         </div>
     </nav>
@@ -702,7 +706,7 @@
             <span class="link-text">Portfolio</span>
         </a>
 
-        <!-- Toggle Button -->
+        <!-- Desktop Toggle Button (hidden on mobile) -->
         <button class="sidebar-toggle-btn" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
             <i class="fas fa-chevron-left toggle-icon"></i>
             <span class="toggle-text">Collapse</span>
@@ -744,7 +748,7 @@
                 el.classList.add('active');
             });
 
-            // FIX 2: Close sidebar on mobile after selecting a link
+            // Close sidebar on mobile after selecting a link
             if (window.innerWidth <= 768) {
                 closeSidebar();
             }
@@ -753,7 +757,7 @@
             document.getElementById('navLinks').classList.remove('show');
         }
 
-        // ===== SIDEBAR TOGGLE =====
+        // ===== SIDEBAR TOGGLE (Desktop) =====
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('mainContent');
@@ -870,3 +874,4 @@
         });
     </script>
 </body>
+</html>
