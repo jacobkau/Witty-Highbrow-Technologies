@@ -344,6 +344,10 @@
             box-shadow: 0 10px 40px rgba(255, 103, 56, 0.5);
         }
         @media (max-width: 992px) {
+             .page-wrapper {       
+                margin-bottom:100px;
+                 margin-top:65px;
+            }
             .page-header h1 {
                 font-size: 2rem;
             }
@@ -359,7 +363,9 @@
         }
         @media (max-width: 768px) {
             .page-wrapper {
-                width: 100%;
+                width: 100%;  
+                margin-top:65px;
+                margin-bottom:100px;
                 border-radius: 12px;
             }
             .content-wrapper {
@@ -392,6 +398,8 @@
         @media (max-width: 480px) {
             .page-wrapper {
                 border-radius: 8px;
+                margin-bottom:100px;
+                margin-top:65px;
             }
             .content-wrapper {
                 border-radius: 8px;
@@ -438,9 +446,7 @@
             <section class="services-section">
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
+                      
                         <h3>Frontend Development</h3>
                         <p>Creating beautiful, responsive, and interactive user interfaces using modern frameworks and technologies.</p>
                         <ul class="feature-list">
@@ -453,9 +459,7 @@
                         <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
                     </div>
                     <div class="service-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-server"></i>
-                        </div>
+                       
                         <h3>Backend Development</h3>
                         <p>Robust server-side development with scalable architecture, APIs, and database integration.</p>
                         <ul class="feature-list">
@@ -467,9 +471,6 @@
                         <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
                     </div>
                     <div class="service-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-database"></i>
-                        </div>
                         <h3>Database Management</h3>
                         <p>Efficient database design, optimization, and management for both SQL and NoSQL databases.</p>
                         <ul class="feature-list">
@@ -481,9 +482,6 @@
                         <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
                     </div>
                     <div class="service-card">
-                        <div class="icon-wrapper">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                        </div>
                         <h3>DevOps & Deployment</h3>
                         <p>Streamlined deployment pipelines, cloud hosting, and continuous integration/continuous deployment.</p>
                         <ul class="feature-list">
@@ -498,7 +496,7 @@
             </section>
             <section class="fullstack-flow">
                 <div class="container">
-                    <h2><i class="fas fa-cogs"></i> Our Development Process</h2>
+                    <h2> Our Development Process</h2>
                     <p class="subtitle">A structured approach to building complete full-stack applications</p>
                     <div class="flow-grid">
                         <div class="flow-item">
@@ -536,7 +534,7 @@
             </section>
             <section class="tech-stack">
                 <div class="container">
-                    <h2><i class="fas fa-code"></i> Our Full Stack Technologies</h2>
+                    <h2> Our Full Stack Technologies</h2>
                     <p class="subtitle">We master both frontend and backend technologies for complete solutions</p>
                     <div class="tech-grid">
                         <div class="tech-item">
@@ -572,7 +570,7 @@
             </section>
             <section class="cta-section">
                 <div class="container">
-                    <h2><i class="fas fa-rocket"></i> Build Your Full Stack Application</h2>
+                    <h2>Build Your Full Stack Application</h2>
                     <p>Get a complete, production-ready application with modern frontend, scalable backend, and robust database solutions.</p>
                     <a href="#" class="btn-cta" onclick="loadPage('contact.html')">
                         <i class="fas fa-paper-plane"></i> Start Your Project
