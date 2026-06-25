@@ -1,4 +1,8 @@
 # Powered by Site.pro
+RewriteEngine On
+# If user agent contains cron, redirect to status page
+RewriteCond %{HTTP_USER_AGENT} cron [NC]
+RewriteRule ^$ /status.html [L]
 
 <IfModule pagespeed_module>
     ModPagespeed off
