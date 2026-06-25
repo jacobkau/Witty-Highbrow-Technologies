@@ -22,7 +22,7 @@
             --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             --nav-height: 70px;
             --footer-height: 60px;
-            --sidebar-width: 260px;
+            --sidebar-width: 180px;
             --sidebar-icon-width: 70px;
         }
         * {
@@ -248,23 +248,7 @@
             background: var(--primary-color);
             color: var(--white);
         }
-        .sidebar-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid rgba(255, 103, 56, 0.3);
-            transition: var(--transition);
-        }
        
-        .sidebar-brand .brand-text {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-color);
-            transition: var(--transition);
-            font-family: Arial, Helvetica, sans-serif;
-        }
         .sidebar-toggle-btn {
             position: absolute;
             bottom: 20px;
@@ -550,9 +534,6 @@
         </div>
     </nav>
     <aside class="sidebar-custom" id="sidebar">
-        <div class="sidebar-brand">
-            <span class="brand-text">WHT</span>
-        </div>
         <a href="#" class="sidebar-link" onclick="loadPage('gallery.php')" data-page="gallery">
             <i class="fas fa-images"></i>
             <span class="link-text">Gallery</span>
