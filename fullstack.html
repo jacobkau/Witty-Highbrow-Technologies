@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
+     * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -17,12 +17,12 @@
         body {
             font-family: 'Poppins', Arial, sans-serif;
             background: #dbe9f4;
-            color: #ffffff;
+            color: #000;
             overflow-x: hidden;
         }
         .page-header {
-            background: #dbe9f4;
-            padding: 20px 20px 20px;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 60px 20px 40px;
             text-align: center;
             border-bottom: 3px solid #ff6738;
             position: relative;
@@ -45,16 +45,21 @@
         .page-header h1 {
             font-size: 3rem;
             font-weight: 700;
-            background: #dbe9f4;
+            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 15px;
         }
-        
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
         .services-section {
             padding: 60px 20px;
-            background: #dbe9f4;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
         }
         .services-grid {
             display: grid;
@@ -108,8 +113,7 @@
         }
         .service-card h3 {
             font-size: 1.4rem;
-            font-weight: 700;
-            font-family:'Roboto Slub',Serif;
+            font-weight: 600;
             margin-bottom: 15px;
             position: relative;
             z-index: 1;
@@ -160,7 +164,7 @@
         }
         .tech-stack {
             padding: 60px 20px;
-            background:#dbe9f4;
+            background: linear-gradient(135deg, #0a0a1a 0%, #16213e 100%);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -215,7 +219,7 @@
         }
         .fullstack-flow {
             padding: 60px 20px;
-            background: #dbe9f4;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
         }
         .fullstack-flow .container {
             max-width: 1200px;
@@ -280,7 +284,7 @@
         }
         .cta-section {
             padding: 60px 20px;
-            background: #dbe9f4;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
             text-align: center;
         }
         .cta-section .container {
@@ -318,19 +322,11 @@
             box-shadow: 0 10px 40px rgba(255, 103, 56, 0.5);
         }
         @media (max-width: 992px) {
-            .container{
-                margin-top:65px;
-                margin-bottom:100px;
-            }
             .page-header h1 {
                 font-size: 2.5rem;
             }
         }
         @media (max-width: 768px) {
-            .container{
-                margin-top:65px;
-                margin-bottom:100px;
-            }
             .page-header {
                 padding: 40px 15px 30px;
             }
@@ -364,10 +360,6 @@
             }
         }
         @media (max-width: 480px) {
-            .container{
-                margin-top:65px;
-                margin-bottom:100px;
-            }
             .page-header h1 {
                 font-size: 1.6rem;
             }
