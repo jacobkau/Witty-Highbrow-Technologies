@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Status</title>
+</head>
+<body>
+    <div style="font-family: Arial, sans-serif; padding: 20px; text-align: center;">
+        <h1 style="color: #ff6738;">✓ OK</h1>
+        <p>Server is running properly</p>
+        <p><small>Last checked: <span id="time"></span></small></p>
+    </div>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
