@@ -253,17 +253,11 @@
             align-items: center;
             gap: 12px;
             padding: 10px 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border-bottom: 2px solid rgba(255, 103, 56, 0.3);
             transition: var(--transition);
         }
-        .sidebar-brand img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
+       
         .sidebar-brand .brand-text {
             font-size: 16px;
             font-weight: 600;
@@ -547,10 +541,10 @@
                     </a>
                 </div>
             </div>
-            <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" onclick="toggleSidebarMobile()" aria-label="Toggle Sidebar">
+            <button class="menu-toggle-btn" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <button class="menu-toggle-btn" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+            <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" onclick="toggleSidebarMobile()" aria-label="Toggle Sidebar">
                 <i class="fas fa-chevron-down"></i>
             </button>
         </div>
@@ -560,7 +554,6 @@
             <img src="images/logo.jpg" alt="Witty Highbrow Technologies Logo">
             <span class="brand-text">WHT</span>
         </div>
-        <div class="sidebar-divider" style="border-top: 1px solid rgba(255,103,56,0.2); margin: 0 0 15px 0;"></div>
         <a href="#" class="sidebar-link" onclick="loadPage('gallery.php')" data-page="gallery">
             <i class="fas fa-images"></i>
             <span class="link-text">Gallery</span>
