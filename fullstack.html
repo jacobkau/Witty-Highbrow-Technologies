@@ -20,10 +20,17 @@
             color: #333;
             overflow-x: hidden;
         }
+        .page-wrapper{
+            width:97%;
+            margin:90px auto;
+            padding:20px;
+            border-radius:10px;
+        }
         .page-header {
             background: #dbe9f4;
-            padding: 60px 20px 40px;
+            padding: 20px 20px 40px;
             text-align: center;
+            margin-top:90px auto;
             border-bottom: 3px solid #ff6738;
             position: relative;
         }
@@ -46,7 +53,7 @@
             font-size: 3rem;
             font-weight: 700;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
        
         .services-section {
@@ -172,7 +179,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #333;
+            color: #ff6738;
         }
         .tech-stack h2 i {
             color: #ff6738;
@@ -226,7 +233,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #333;
+            color: #ff6738;
         }
         .fullstack-flow h2 i {
             color: #ff6738;
@@ -293,7 +300,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #333;
+            color: #ff6738;
         }
         .cta-section h2 i {
             color: #ff6738;
@@ -326,7 +333,7 @@
         }
         @media (max-width: 768px) {
             .page-header {
-                padding: 40px 15px 30px;
+                padding: 20px 15px 30px;
             }
             .page-header h1 {
                 font-size: 2rem;
@@ -382,6 +389,7 @@
     </style>
 </head>
 <body>
+    <div class="page-wrapper">
     <div class="page-header">
         <div class="container">
             <h1> Full Stack Development</h1>
@@ -438,7 +446,7 @@
     </section>
     <section class="fullstack-flow">
         <div class="container">
-            <h2><i class="fas fa-cogs"></i> Our Development Process</h2>
+            <h2> Our Development Process</h2>
             <p class="subtitle">A structured approach to building complete full-stack applications</p>
             <div class="flow-grid">
                 <div class="flow-item">
@@ -476,7 +484,7 @@
     </section>
     <section class="tech-stack">
         <div class="container">
-            <h2><i class="fas fa-code"></i> Our Full Stack Technologies</h2>
+            <h2>Our Full Stack Technologies</h2>
             <p class="subtitle">We master both frontend and backend technologies for complete solutions</p>
             <div class="tech-grid">
                 <div class="tech-item">
@@ -512,13 +520,14 @@
     </section>
     <section class="cta-section">
         <div class="container">
-            <h2><i class="fas fa-rocket"></i> Build Your Full Stack Application</h2>
+            <h2> Build Your Full Stack Application</h2>
             <p>Get a complete, production-ready application with modern frontend, scalable backend, and robust database solutions.</p>
             <a href="#" class="btn-cta" onclick="loadPage('contact.html')">
                 <i class="fas fa-paper-plane"></i> Start Your Project
             </a>
         </div>
     </section>
+    </div>
     <script>
         function loadPage(url) {
             if (window.parent && window.parent.loadPage) {
