@@ -16,8 +16,8 @@
         }
         body {
             font-family: 'Poppins', Arial, sans-serif;
-            background: #0a0a1a;
-            color: #fff;
+            background: #dbe9f4;
+            color: #000;
             overflow-x: hidden;
         }
         .page-header {
@@ -51,12 +51,7 @@
             background-clip: text;
             margin-bottom: 15px;
         }
-        .page-header p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        
         .services-section {
             padding: 60px 20px;
             background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
@@ -113,7 +108,8 @@
         }
         .service-card h3 {
             font-size: 1.4rem;
-            font-weight: 600;
+            font-weight: 700;
+            font-family:'Roboto Slub',Serif;
             margin-bottom: 15px;
             position: relative;
             z-index: 1;
@@ -322,11 +318,19 @@
             box-shadow: 0 10px 40px rgba(255, 103, 56, 0.5);
         }
         @media (max-width: 992px) {
+            .container{
+                margin-top:65px;
+                margin-bottom:100px;
+            }
             .page-header h1 {
                 font-size: 2.5rem;
             }
         }
         @media (max-width: 768px) {
+            .container{
+                margin-top:65px;
+                margin-bottom:100px;
+            }
             .page-header {
                 padding: 40px 15px 30px;
             }
@@ -360,6 +364,10 @@
             }
         }
         @media (max-width: 480px) {
+            .container{
+                margin-top:65px;
+                margin-bottom:100px;
+            }
             .page-header h1 {
                 font-size: 1.6rem;
             }
@@ -387,16 +395,12 @@
 <body>
     <div class="page-header">
         <div class="container">
-            <h1><i class="fas fa-layer-group"></i> Full Stack Development</h1>
-            <p>End-to-end development solutions covering both frontend and backend technologies for complete digital solutions</p>
+            <h1> Full Stack Development</h1>
         </div>
     </div>
     <section class="services-section">
         <div class="services-grid">
             <div class="service-card">
-                <div class="icon-wrapper">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
                 <h3>Frontend Development</h3>
                 <p>Creating beautiful, responsive, and interactive user interfaces using modern frameworks and technologies.</p>
                 <ul class="feature-list">
@@ -408,9 +412,6 @@
                 <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
             </div>
             <div class="service-card">
-                <div class="icon-wrapper">
-                    <i class="fas fa-server"></i>
-                </div>
                 <h3>Backend Development</h3>
                 <p>Robust server-side development with scalable architecture, APIs, and database integration.</p>
                 <ul class="feature-list">
@@ -422,30 +423,13 @@
                 <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
             </div>
             <div class="service-card">
-                <div class="icon-wrapper">
-                    <i class="fas fa-database"></i>
-                </div>
                 <h3>Database Management</h3>
                 <p>Efficient database design, optimization, and management for both SQL and NoSQL databases.</p>
                 <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> MySQL, PostgreSQL</li>
-                    <li><i class="fas fa-check-circle"></i> MongoDB, Firebase</li>
+                    <li><i class="fas fa-check-circle"></i> MySQL</li>
+                    <li><i class="fas fa-check-circle"></i> MongoDB</li>
                     <li><i class="fas fa-check-circle"></i> Data Modeling</li>
                     <li><i class="fas fa-check-circle"></i> Performance Tuning</li>
-                </ul>
-                <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
-            </div>
-            <div class="service-card">
-                <div class="icon-wrapper">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                </div>
-                <h3>DevOps & Deployment</h3>
-                <p>Streamlined deployment pipelines, cloud hosting, and continuous integration/continuous deployment.</p>
-                <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> AWS, Azure, GCP</li>
-                    <li><i class="fas fa-check-circle"></i> Docker & Kubernetes</li>
-                    <li><i class="fas fa-check-circle"></i> CI/CD Pipelines</li>
-                    <li><i class="fas fa-check-circle"></i> Monitoring & Logging</li>
                 </ul>
                 <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
             </div>
@@ -510,18 +494,12 @@
                     <i class="fab fa-node"></i>
                     <span>Node.js</span>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
+                
                 <div class="tech-item">
                     <i class="fab fa-php"></i>
                     <span>PHP</span>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-java"></i>
-                    <span>Java</span>
-                </div>
+               
                 <div class="tech-item">
                     <i class="fas fa-database"></i>
                     <span>MySQL</span>
@@ -533,10 +511,6 @@
                 <div class="tech-item">
                     <i class="fab fa-aws"></i>
                     <span>AWS</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-docker"></i>
-                    <span>Docker</span>
                 </div>
                 <div class="tech-item">
                     <i class="fas fa-code-branch"></i>
