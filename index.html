@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv='content-language' content='en-gb'>
@@ -9,16 +8,10 @@
     <meta name="google-site-verification" content="q0CaTjOHwmJonsjrRU-LM2mlW-7OyLOlx6BbDGJWMc4" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
-    
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <title>Witty Highbrow Technologies | Home</title>
-    
     <style>
         :root {
             --primary-color: #ff6738;
@@ -32,22 +25,17 @@
             --sidebar-width: 260px;
             --sidebar-icon-width: 70px;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html,
-        body {
+        html, body {
             height: 100%;
             font-family: 'Poppins', Arial, sans-serif;
             background: #f5f7fa;
             overflow: hidden;
         }
-
-        /* ===== NAVIGATION ===== */
         .custom-nav {
             height: var(--nav-height);
             background: var(--secondary-color);
@@ -60,7 +48,6 @@
             z-index: 1030;
             padding: 0 20px;
         }
-
         .logo-brand {
             display: flex;
             align-items: center;
@@ -68,28 +55,23 @@
             color: var(--text-color);
             text-decoration: none;
         }
-
         .logo-brand img {
             width: 45px;
             height: 45px;
             border-radius: 50%;
             object-fit: cover;
         }
-
         .logo-brand h1 {
             font-size: 20px;
             font-weight: 600;
             margin: 0;
             white-space: nowrap;
         }
-
-        /* ===== NAV LINKS ===== */
         .nav-links {
             display: flex;
             gap: 8px;
             align-items: center;
         }
-
         .nav-links .nav-link-custom {
             color: var(--text-color);
             text-decoration: none;
@@ -100,27 +82,21 @@
             transition: var(--transition);
             position: relative;
         }
-
         .nav-links .nav-link-custom i {
             margin-right: 6px;
         }
-
         .nav-links .nav-link-custom:hover {
             background: var(--primary-color);
             color: var(--white);
             transform: translateY(-2px);
         }
-
         .nav-links .nav-link-custom.active {
             background: var(--primary-color);
             color: var(--white);
         }
-
-        /* ===== FLYING SOCIAL BUTTON ===== */
         .social-flyout {
             position: relative;
         }
-
         .social-toggle-btn {
             width: 42px;
             height: 42px;
@@ -136,19 +112,16 @@
             align-items: center;
             justify-content: center;
         }
-
         .social-toggle-btn:hover {
             background: var(--primary-color);
             color: var(--white);
             transform: scale(1.1) rotate(90deg);
         }
-
         .social-toggle-btn.active {
             background: var(--primary-color);
             color: var(--white);
             transform: rotate(90deg);
         }
-
         .social-dropdown {
             position: absolute;
             top: 52px;
@@ -164,13 +137,11 @@
             z-index: 1050;
             animation: slideDown 0.3s ease;
         }
-
         .social-dropdown.show {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
-
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -181,7 +152,6 @@
                 transform: translateY(0) scale(1);
             }
         }
-
         .social-dropdown .social-link {
             display: inline-flex;
             align-items: center;
@@ -195,14 +165,11 @@
             text-decoration: none;
             background: #f5f7fa;
         }
-
         .social-dropdown .social-link:hover {
             transform: translateY(-3px) scale(1.15);
             background: var(--primary-color);
             color: var(--white);
         }
-
-        /* ===== SIDEBAR - COLLAPSIBLE ===== */
         .sidebar-custom {
             width: var(--sidebar-width);
             background: var(--secondary-color);
@@ -218,50 +185,38 @@
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
             border-right: 2px solid var(--primary-color);
         }
-
-        /* ===== COLLAPSED STATE - ICON ONLY ===== */
         .sidebar-custom.collapsed {
             width: var(--sidebar-icon-width);
             padding: 20px 8px;
         }
-
         .sidebar-custom.collapsed .sidebar-link .link-text {
             display: none;
         }
-
         .sidebar-custom.collapsed .sidebar-link {
             justify-content: center;
             padding: 12px 0;
         }
-
         .sidebar-custom.collapsed .sidebar-link i {
             font-size: 20px;
             margin: 0;
         }
-
         .sidebar-custom.collapsed .sidebar-brand .brand-text {
             display: none;
         }
-
         .sidebar-custom.collapsed .sidebar-brand {
             justify-content: center;
             padding: 10px 0;
         }
-
         .sidebar-custom.collapsed .sidebar-brand img {
             width: 38px;
             height: 38px;
         }
-
         .sidebar-custom.collapsed .sidebar-divider {
             display: none;
         }
-
         .sidebar-custom.collapsed .sidebar-toggle-btn .toggle-icon {
             transform: rotate(180deg);
         }
-
-        /* ===== EXPANDED STATE - FULL ===== */
         .sidebar-custom .sidebar-link {
             display: flex;
             align-items: center;
@@ -275,29 +230,24 @@
             font-weight: 500;
             white-space: nowrap;
         }
-
         .sidebar-custom .sidebar-link i {
             width: 22px;
             text-align: center;
             flex-shrink: 0;
         }
-
         .sidebar-custom .sidebar-link .link-text {
             transition: var(--transition);
             opacity: 1;
         }
-
         .sidebar-custom .sidebar-link:hover {
             background: var(--primary-color);
             color: var(--white);
             transform: translateX(5px);
         }
-
         .sidebar-custom .sidebar-link.active {
             background: var(--primary-color);
             color: var(--white);
         }
-
         .sidebar-brand {
             display: flex;
             align-items: center;
@@ -307,7 +257,6 @@
             border-bottom: 2px solid rgba(255, 103, 56, 0.3);
             transition: var(--transition);
         }
-
         .sidebar-brand img {
             width: 45px;
             height: 45px;
@@ -315,7 +264,6 @@
             object-fit: cover;
             flex-shrink: 0;
         }
-
         .sidebar-brand .brand-text {
             font-size: 16px;
             font-weight: 600;
@@ -323,7 +271,6 @@
             transition: var(--transition);
             font-family: Arial, Helvetica, sans-serif;
         }
-
         .sidebar-toggle-btn {
             position: absolute;
             bottom: 20px;
@@ -345,45 +292,28 @@
             font-weight: 600;
             box-shadow: 0 2px 10px rgba(255, 103, 56, 0.3);
         }
-
         .sidebar-toggle-btn:hover {
             transform: translateX(-50%) scale(1.05);
             box-shadow: 0 4px 20px rgba(255, 103, 56, 0.5);
         }
-
         .sidebar-toggle-btn .toggle-text {
             transition: var(--transition);
         }
-
         .sidebar-custom.collapsed .sidebar-toggle-btn {
             width: 50px;
         }
-
         .sidebar-custom.collapsed .sidebar-toggle-btn .toggle-text {
             display: none;
         }
-
-        .icon-img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            vertical-align: middle;
-            margin-left: 0.3rem;
-            display: inline-block;
-        }
-
-        /* ===== MAIN CONTENT ===== */
         .main-content {
             margin-left: var(--sidebar-width);
             padding-top: 20px;
             height: 100vh;
             transition: var(--transition);
         }
-
         .main-content.expanded {
             margin-left: var(--sidebar-icon-width);
         }
-
         .main-content iframe {
             width: 100%;
             height: calc(100vh - var(--nav-height));
@@ -391,8 +321,6 @@
             background: var(--white);
             display: block;
         }
-
-        /* ===== FOOTER ===== */
         .custom-footer {
             background: var(--text-color);
             color: var(--white);
@@ -409,14 +337,11 @@
             justify-content: center;
             border-top: 3px solid var(--primary-color);
         }
-
         .custom-footer p {
             margin: 0;
             font-size: 14px;
             opacity: 0.9;
         }
-
-        /* ===== MOBILE TOGGLES ===== */
         .menu-toggle-btn {
             cursor: pointer;
             font-size: 24px;
@@ -427,13 +352,10 @@
             transition: var(--transition);
             display: none;
         }
-
         .menu-toggle-btn:hover {
             background: var(--primary-color);
             color: var(--white);
         }
-
-        /* ===== MOBILE SIDEBAR TOGGLE (VISIBLE ON MOBILE) ===== */
         .mobile-sidebar-toggle {
             display: none;
             cursor: pointer;
@@ -445,13 +367,10 @@
             transition: var(--transition);
             color: var(--text-color);
         }
-
         .mobile-sidebar-toggle:hover {
             background: var(--primary-color);
             color: var(--white);
         }
-
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .logo-brand h1 {
                 font-size: 16px;
@@ -461,18 +380,13 @@
                 padding: 6px 12px;
             }
         }
-
         @media (max-width: 768px) {
-            /* Show mobile sidebar toggle button */
             .mobile-sidebar-toggle {
                 display: block !important;
             }
-
-            /* Hide desktop sidebar toggle inside sidebar on mobile */
             .sidebar-custom .sidebar-toggle-btn {
                 display: none !important;
             }
-
             .sidebar-custom {
                 transform: translateX(-100%);
                 width: var(--sidebar-width);
@@ -480,7 +394,6 @@
             .sidebar-custom.open {
                 transform: translateX(0);
             }
-            
             .sidebar-custom.collapsed {
                 width: var(--sidebar-width);
                 transform: translateX(-100%);
@@ -509,18 +422,15 @@
             .sidebar-custom.collapsed .sidebar-divider {
                 display: block;
             }
-            
             .main-content {
                 margin-left: 0;
             }
             .main-content.expanded {
                 margin-left: 0;
             }
-            
             .menu-toggle-btn {
                 display: block !important;
             }
-            
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -543,20 +453,20 @@
                 text-align: center;
                 padding: 12px;
             }
-            
             .social-flyout {
                 display: block !important;
             }
-            
             .social-dropdown {
                 position: fixed;
-                top: auto;
-                bottom: 80px;
-                right: 20px;
-                left: 20px;
+                top: var(--nav-height);
+                bottom: auto;
+                right: 0;
+                left: 0;
                 min-width: auto;
                 justify-content: center;
                 padding: 15px;
+                border-radius: 0 0 12px 12px;
+                border-bottom: 3px solid var(--primary-color);
             }
             .social-dropdown .social-link {
                 width: 42px;
@@ -564,7 +474,6 @@
                 font-size: 18px;
             }
         }
-
         @media (max-width: 480px) {
             .logo-brand h1 {
                 font-size: 14px;
@@ -577,7 +486,6 @@
                 width: 100%;
             }
         }
-
         .sidebar-custom::-webkit-scrollbar {
             width: 4px;
         }
@@ -593,18 +501,14 @@
         }
     </style>
 </head>
-
 <body>
-    <!-- ===== NAVIGATION ===== -->
     <nav class="custom-nav d-flex align-items-center justify-content-between">
-        <!-- Logo -->
-        <a href="#" class="logo-brand" onclick="loadPage('start.html')">
+        <a href="#" class="logo-brand" onclick="loadPage('index.html')">
+            <img src="images/logo.jpg" alt="Logo">
             <h1>Witty Highbrow Technologies</h1>
         </a>
-
-        <!-- Nav Links -->
         <div class="nav-links" id="navLinks">
-            <a href="#" class="nav-link-custom active" onclick="loadPage('start.html')">
+            <a href="#" class="nav-link-custom active" onclick="loadPage('index.html')">
                 <i class="fas fa-home"></i> Home
             </a>
             <a href="#" class="nav-link-custom" onclick="loadPage('about.html')">
@@ -617,10 +521,7 @@
                 <i class="fas fa-envelope"></i> Contact
             </a>
         </div>
-
-        <!-- Right Side: Social Flyout + Mobile Toggles -->
         <div class="d-flex align-items-center gap-2">
-            <!-- Social Flyout Button -->
             <div class="social-flyout" id="socialFlyout">
                 <button class="social-toggle-btn" id="socialToggle" onclick="toggleSocial()">
                     <i class="fas fa-share-alt"></i>
@@ -646,29 +547,21 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Mobile Sidebar Toggle Button (visible on small screens) -->
             <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" onclick="toggleSidebarMobile()" aria-label="Toggle Sidebar">
                 <i class="fas fa-bars"></i>
             </button>
-
-            <!-- Mobile Menu Toggle Button -->
             <button class="menu-toggle-btn" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
                 <i class="fas fa-chevron-down"></i>
             </button>
         </div>
     </nav>
-
-    <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar-custom" id="sidebar">
         <div class="sidebar-brand">
             <img src="images/logo.jpg" alt="Witty Highbrow Technologies Logo">
             <span class="brand-text">Highbrow</span>
         </div>
-
         <div class="sidebar-divider" style="border-top: 1px solid rgba(255,103,56,0.2); margin: 0 0 15px 0;"></div>
-
-        <a href="#" class="sidebar-link active" onclick="loadPage('start.html')" data-page="start">
+        <a href="#" class="sidebar-link active" onclick="loadPage('index.html')" data-page="index">
             <i class="fas fa-home"></i>
             <span class="link-text">Home</span>
         </a>
@@ -684,62 +577,45 @@
             <i class="fas fa-envelope"></i>
             <span class="link-text">Contact</span>
         </a>
-
-        <a href="#" class="sidebar-link" onclick="loadPage('gallery.html')" data-page="gallery">
+        <a href="#" class="sidebar-link" onclick="loadPage('gallery.php')" data-page="gallery">
             <i class="fas fa-images"></i>
             <span class="link-text">Gallery</span>
         </a>
-        <a href="#" class="sidebar-link" onclick="loadPage('blog.html')" data-page="blog">
-            <i class="fas fa-blog"></i>
-            <span class="link-text">Blog</span>
+        <a href="#" class="sidebar-link" onclick="loadPage('graphic.html')" data-page="graphic">
+            <i class="fas fa-paint-brush"></i>
+            <span class="link-text">Graphic</span>
         </a>
-        <a href="#" class="sidebar-link" onclick="loadPage('faq.html')" data-page="faq">
-            <i class="fas fa-question-circle"></i>
-            <span class="link-text">FAQ</span>
+        <a href="#" class="sidebar-link" onclick="loadPage('infortech.html')" data-page="infortech">
+            <i class="fas fa-laptop-code"></i>
+            <span class="link-text">Infortech</span>
         </a>
-        <a href="#" class="sidebar-link" onclick="loadPage('support.html')" data-page="support">
-            <i class="fas fa-headset"></i>
-            <span class="link-text">Support</span>
+        <a href="#" class="sidebar-link" onclick="loadPage('mobile.html')" data-page="mobile">
+            <i class="fas fa-mobile-alt"></i>
+            <span class="link-text">Mobile</span>
         </a>
-        <a href="#" class="sidebar-link" onclick="loadPage('portfolio.html')" data-page="portfolio">
-            <i class="fas fa-briefcase"></i>
-            <span class="link-text">Portfolio</span>
-        </a>
-
-        <!-- Desktop Toggle Button (hidden on mobile) -->
         <button class="sidebar-toggle-btn" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
             <i class="fas fa-chevron-left toggle-icon"></i>
             <span class="toggle-text">Collapse</span>
         </button>
     </aside>
-
-    <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content" id="mainContent">
-        <iframe src="start.html" id="contentFrame" title="Witty Highbrow Technologies Content"></iframe>
+        <iframe src="index.html" id="contentFrame" title="Witty Highbrow Technologies Content"></iframe>
     </main>
-
-    <!-- ===== FOOTER ===== -->
     <footer class="custom-footer">
         <p>&copy; 2026 Witty Highbrow Technologies. All rights reserved.</p>
     </footer>
-
     <script>
-        // ===== PAGE LOADER =====
         function loadPage(page) {
             const frame = document.getElementById('contentFrame');
             if (frame) {
                 frame.src = page;
             }
-
-            // Update active states for nav and sidebar
             document.querySelectorAll('.nav-link-custom').forEach(link => {
                 link.classList.remove('active');
             });
             document.querySelectorAll('.sidebar-link').forEach(link => {
                 link.classList.remove('active');
             });
-
-            // Find and activate matching links
             const pageName = page.split('.')[0];
             document.querySelectorAll(`.nav-link-custom[onclick*="${pageName}"]`).forEach(el => {
                 el.classList.add('active');
@@ -747,27 +623,18 @@
             document.querySelectorAll(`.sidebar-link[onclick*="${pageName}"]`).forEach(el => {
                 el.classList.add('active');
             });
-
-            // Close sidebar on mobile after selecting a link
             if (window.innerWidth <= 768) {
                 closeSidebar();
             }
-
-            // Close mobile nav menu
             document.getElementById('navLinks').classList.remove('show');
         }
-
-        // ===== SIDEBAR TOGGLE (Desktop) =====
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('mainContent');
             const toggleBtn = document.querySelector('.sidebar-toggle-btn .toggle-text');
             const toggleIcon = document.querySelector('.sidebar-toggle-btn .toggle-icon');
-
             sidebar.classList.toggle('collapsed');
             mainContent.classList.toggle('expanded');
-
-            // Update button text
             if (sidebar.classList.contains('collapsed')) {
                 if (toggleBtn) toggleBtn.textContent = 'Expand';
                 if (toggleIcon) toggleIcon.classList.replace('fa-chevron-left', 'fa-chevron-right');
@@ -776,53 +643,38 @@
                 if (toggleIcon) toggleIcon.classList.replace('fa-chevron-right', 'fa-chevron-left');
             }
         }
-
-        // ===== SIDEBAR CLOSE (for mobile) =====
         function closeSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.remove('open');
         }
-
-        // ===== SIDEBAR OPEN/TOGGLE (for mobile hamburger) =====
         function toggleSidebarMobile() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('open');
         }
-
-        // ===== MOBILE NAV TOGGLE =====
         function toggleMobileMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('show');
         }
-
-        // ===== SOCIAL FLYOUT TOGGLE =====
         function toggleSocial() {
             const dropdown = document.getElementById('socialDropdown');
             const toggleBtn = document.getElementById('socialToggle');
             dropdown.classList.toggle('show');
             toggleBtn.classList.toggle('active');
         }
-
-        // Close social dropdown when clicking outside
         document.addEventListener('click', function(event) {
             const flyout = document.getElementById('socialFlyout');
             const dropdown = document.getElementById('socialDropdown');
             const toggleBtn = document.getElementById('socialToggle');
-            
             if (!flyout.contains(event.target)) {
                 dropdown.classList.remove('show');
                 toggleBtn.classList.remove('active');
             }
         });
-
-        // ===== KEYBOARD SHORTCUTS =====
         document.addEventListener('keydown', function(e) {
-            // Ctrl+Shift+S to toggle sidebar
             if (e.ctrlKey && e.shiftKey && (e.key === 'S' || e.key === 's')) {
                 e.preventDefault();
                 toggleSidebar();
             }
-            // Escape to close dropdowns and menus
             if (e.key === 'Escape') {
                 document.getElementById('socialDropdown').classList.remove('show');
                 document.getElementById('socialToggle').classList.remove('active');
@@ -832,41 +684,30 @@
                 }
             }
         });
-
-        // ===== HANDLE SIDEBAR ON WINDOW RESIZE =====
         let resizeTimeout;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(function() {
                 const sidebar = document.getElementById('sidebar');
                 const mainContent = document.getElementById('mainContent');
-                
                 if (window.innerWidth > 768) {
                     sidebar.classList.remove('open');
-                    // Restore sidebar state based on collapsed class
                     if (sidebar.classList.contains('collapsed')) {
                         mainContent.classList.add('expanded');
                     } else {
                         mainContent.classList.remove('expanded');
                     }
                 } else {
-                    // On mobile, ensure main content has no margin
                     mainContent.classList.remove('expanded');
-                    // Close sidebar by default on mobile resize
                     sidebar.classList.remove('open');
                 }
             }, 250);
         });
-
-        // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
-            // Set initial state for sidebar toggle button icon
             const toggleIcon = document.querySelector('.sidebar-toggle-btn .toggle-icon');
             if (toggleIcon) {
                 toggleIcon.classList.add('fa-chevron-left');
             }
-            
-            // Ensure proper initial state on mobile
             if (window.innerWidth <= 768) {
                 document.getElementById('sidebar').classList.remove('open');
                 document.getElementById('mainContent').classList.remove('expanded');
