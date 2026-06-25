@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-     * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -17,11 +17,11 @@
         body {
             font-family: 'Poppins', Arial, sans-serif;
             background: #dbe9f4;
-            color: #000;
+            color: #333;
             overflow-x: hidden;
         }
         .page-header {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            background: #dbe9f4;
             padding: 60px 20px 40px;
             text-align: center;
             border-bottom: 3px solid #ff6738;
@@ -45,21 +45,13 @@
         .page-header h1 {
             font-size: 3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #333;
             margin-bottom: 15px;
         }
-        .page-header p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+       
         .services-section {
             padding: 60px 20px;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            background: #dbe9f4;
         }
         .services-grid {
             display: grid;
@@ -77,6 +69,8 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            background: rgba(10, 10, 26, 0.85);
+            color: #fff;
         }
         .service-card::before {
             content: '';
@@ -117,6 +111,7 @@
             margin-bottom: 15px;
             position: relative;
             z-index: 1;
+            color: #fff;
         }
         .service-card p {
             color: rgba(255, 255, 255, 0.7);
@@ -164,7 +159,7 @@
         }
         .tech-stack {
             padding: 60px 20px;
-            background: linear-gradient(135deg, #0a0a1a 0%, #16213e 100%);
+            background: #dbe9f4;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -177,14 +172,14 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #333;
+        }
+        .tech-stack h2 i {
+            color: #ff6738;
         }
         .tech-stack .subtitle {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 1.1rem;
             margin-bottom: 40px;
         }
@@ -194,17 +189,18 @@
             gap: 20px;
         }
         .tech-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(10, 10, 26, 0.85);
             border-radius: 12px;
             padding: 25px 15px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
+            color: #fff;
         }
         .tech-item:hover {
             border-color: #ff6738;
             transform: translateY(-5px);
-            background: rgba(255, 103, 56, 0.1);
+            background: rgba(10, 10, 26, 0.95);
         }
         .tech-item i {
             font-size: 40px;
@@ -219,7 +215,7 @@
         }
         .fullstack-flow {
             padding: 60px 20px;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            background: #dbe9f4;
         }
         .fullstack-flow .container {
             max-width: 1200px;
@@ -230,14 +226,14 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #333;
+        }
+        .fullstack-flow h2 i {
+            color: #ff6738;
         }
         .fullstack-flow .subtitle {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 1.1rem;
             margin-bottom: 40px;
         }
@@ -247,13 +243,14 @@
             gap: 30px;
         }
         .flow-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(10, 10, 26, 0.85);
             border-radius: 16px;
             padding: 30px 25px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
             position: relative;
+            color: #fff;
         }
         .flow-item:hover {
             border-color: #ff6738;
@@ -276,6 +273,7 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 10px;
+            color: #fff;
         }
         .flow-item p {
             color: rgba(255, 255, 255, 0.7);
@@ -284,7 +282,7 @@
         }
         .cta-section {
             padding: 60px 20px;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+            background: #dbe9f4;
             text-align: center;
         }
         .cta-section .container {
@@ -295,13 +293,13 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #ff6738 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #333;
+        }
+        .cta-section h2 i {
+            color: #ff6738;
         }
         .cta-section p {
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 1.1rem;
             margin-bottom: 30px;
         }
@@ -333,9 +331,7 @@
             .page-header h1 {
                 font-size: 2rem;
             }
-            .page-header p {
-                font-size: 1rem;
-            }
+          
             .services-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -360,6 +356,7 @@
             }
         }
         @media (max-width: 480px) {
+            
             .page-header h1 {
                 font-size: 1.6rem;
             }
@@ -398,7 +395,8 @@
                 <ul class="feature-list">
                     <li><i class="fas fa-check-circle"></i> HTML5 & CSS3</li>
                     <li><i class="fas fa-check-circle"></i> JavaScript (ES6+)</li>
-                    <li><i class="fas fa-check-circle"></i> React, Angular, Vue.js</li>
+                    <li><i class="fas fa-check-circle"></i> Tailwind CSS</li>
+                    <li><i class="fas fa-check-circle"></i> React, Vue.js</li>
                     <li><i class="fas fa-check-circle"></i> Responsive Design</li>
                 </ul>
                 <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
@@ -407,7 +405,7 @@
                 <h3>Backend Development</h3>
                 <p>Robust server-side development with scalable architecture, APIs, and database integration.</p>
                 <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> Node.js, Python, PHP</li>
+                    <li><i class="fas fa-check-circle"></i> Node.js, PHP</li>
                     <li><i class="fas fa-check-circle"></i> RESTful APIs</li>
                     <li><i class="fas fa-check-circle"></i> Microservices</li>
                     <li><i class="fas fa-check-circle"></i> Authentication & Security</li>
@@ -418,10 +416,21 @@
                 <h3>Database Management</h3>
                 <p>Efficient database design, optimization, and management for both SQL and NoSQL databases.</p>
                 <ul class="feature-list">
-                    <li><i class="fas fa-check-circle"></i> MySQL</li>
-                    <li><i class="fas fa-check-circle"></i> MongoDB</li>
+                    <li><i class="fas fa-check-circle"></i> MySQL, PostgreSQL</li>
+                    <li><i class="fas fa-check-circle"></i> MongoDB, Firebase</li>
                     <li><i class="fas fa-check-circle"></i> Data Modeling</li>
                     <li><i class="fas fa-check-circle"></i> Performance Tuning</li>
+                </ul>
+                <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
+            </div>
+            <div class="service-card">             
+                <h3>DevOps & Deployment</h3>
+                <p>Streamlined deployment pipelines, cloud hosting, and continuous integration/continuous deployment.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> AWS, Azure, GCP</li>
+                    <li><i class="fas fa-check-circle"></i> Docker & Kubernetes</li>
+                    <li><i class="fas fa-check-circle"></i> CI/CD Pipelines</li>
+                    <li><i class="fas fa-check-circle"></i> Monitoring & Logging</li>
                 </ul>
                 <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
             </div>
@@ -429,7 +438,7 @@
     </section>
     <section class="fullstack-flow">
         <div class="container">
-            <h2>Our Development Process</h2>
+            <h2><i class="fas fa-cogs"></i> Our Development Process</h2>
             <p class="subtitle">A structured approach to building complete full-stack applications</p>
             <div class="flow-grid">
                 <div class="flow-item">
@@ -467,16 +476,12 @@
     </section>
     <section class="tech-stack">
         <div class="container">
-            <h2>Our Full Stack Technologies</h2>
+            <h2><i class="fas fa-code"></i> Our Full Stack Technologies</h2>
             <p class="subtitle">We master both frontend and backend technologies for complete solutions</p>
             <div class="tech-grid">
                 <div class="tech-item">
                     <i class="fab fa-react"></i>
                     <span>React</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-angular"></i>
-                    <span>Angular</span>
                 </div>
                 <div class="tech-item">
                     <i class="fab fa-vuejs"></i>
@@ -486,12 +491,10 @@
                     <i class="fab fa-node"></i>
                     <span>Node.js</span>
                 </div>
-                
                 <div class="tech-item">
                     <i class="fab fa-php"></i>
                     <span>PHP</span>
                 </div>
-               
                 <div class="tech-item">
                     <i class="fas fa-database"></i>
                     <span>MySQL</span>
@@ -499,10 +502,6 @@
                 <div class="tech-item">
                     <i class="fas fa-database"></i>
                     <span>MongoDB</span>
-                </div>
-                <div class="tech-item">
-                    <i class="fab fa-aws"></i>
-                    <span>AWS</span>
                 </div>
                 <div class="tech-item">
                     <i class="fas fa-code-branch"></i>
@@ -513,7 +512,7 @@
     </section>
     <section class="cta-section">
         <div class="container">
-            <h2>Build Your Full Stack Application</h2>
+            <h2><i class="fas fa-rocket"></i> Build Your Full Stack Application</h2>
             <p>Get a complete, production-ready application with modern frontend, scalable backend, and robust database solutions.</p>
             <a href="#" class="btn-cta" onclick="loadPage('contact.html')">
                 <i class="fas fa-paper-plane"></i> Start Your Project
