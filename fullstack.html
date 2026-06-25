@@ -30,7 +30,6 @@
             border-radius: 20px;
             position: relative;
             overflow: hidden;
-            background: #dbe9f4;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
         .overlay1 {
@@ -43,13 +42,19 @@
             z-index: 0;
             pointer-events: none;
         }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            background: #dbe9f4;
+            border-radius: 20px;
+        }
         .page-header {
-            background: transparent;
+            background: #dbe9f4;
             padding: 40px 20px 20px;
             text-align: center;
             border-bottom: 3px solid #ff6738;
             position: relative;
-            z-index: 1;
+            border-radius: 20px 20px 0 0;
         }
         .page-header .container {
             position: relative;
@@ -58,7 +63,7 @@
         .page-header h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #fff;
+            color: #333;
             margin-bottom: 5px;
         }
         .page-header h1 i {
@@ -66,9 +71,8 @@
         }
         .services-section {
             padding: 40px 20px 60px;
-            background: transparent;
+            background: #dbe9f4;
             position: relative;
-            z-index: 1;
         }
         .services-grid {
             display: grid;
@@ -78,7 +82,7 @@
             margin: 0 auto;
         }
         .service-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(10, 10, 26, 0.85);
             border-radius: 16px;
             padding: 35px 30px;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -86,7 +90,6 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            background: rgba(10, 10, 26, 0.85);
             color: #fff;
         }
         .service-card::before {
@@ -176,11 +179,10 @@
         }
         .tech-stack {
             padding: 60px 20px;
-            background: transparent;
+            background: #dbe9f4;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             position: relative;
-            z-index: 1;
         }
         .tech-stack .container {
             max-width: 1200px;
@@ -191,14 +193,14 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #fff;
+            color: #333;
         }
         .tech-stack h2 i {
             color: #ff6738;
         }
         .tech-stack .subtitle {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 1.1rem;
             margin-bottom: 40px;
         }
@@ -208,19 +210,18 @@
             gap: 20px;
         }
         .tech-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(10, 10, 26, 0.85);
             border-radius: 12px;
             padding: 25px 15px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
             color: #fff;
-            backdrop-filter: blur(10px);
         }
         .tech-item:hover {
             border-color: #ff6738;
             transform: translateY(-5px);
-            background: rgba(255, 103, 56, 0.1);
+            background: rgba(10, 10, 26, 0.95);
         }
         .tech-item i {
             font-size: 40px;
@@ -235,9 +236,8 @@
         }
         .fullstack-flow {
             padding: 60px 20px;
-            background: transparent;
+            background: #dbe9f4;
             position: relative;
-            z-index: 1;
         }
         .fullstack-flow .container {
             max-width: 1200px;
@@ -248,14 +248,14 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #fff;
+            color: #333;
         }
         .fullstack-flow h2 i {
             color: #ff6738;
         }
         .fullstack-flow .subtitle {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 1.1rem;
             margin-bottom: 40px;
         }
@@ -265,7 +265,7 @@
             gap: 30px;
         }
         .flow-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(10, 10, 26, 0.85);
             border-radius: 16px;
             padding: 30px 25px;
             text-align: center;
@@ -273,7 +273,6 @@
             transition: all 0.3s ease;
             position: relative;
             color: #fff;
-            backdrop-filter: blur(10px);
         }
         .flow-item:hover {
             border-color: #ff6738;
@@ -305,10 +304,10 @@
         }
         .cta-section {
             padding: 60px 20px;
-            background: transparent;
+            background: #dbe9f4;
             text-align: center;
             position: relative;
-            z-index: 1;
+            border-radius: 0 0 20px 20px;
         }
         .cta-section .container {
             max-width: 800px;
@@ -318,13 +317,13 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #fff;
+            color: #333;
         }
         .cta-section h2 i {
             color: #ff6738;
         }
         .cta-section p {
-            color: rgba(255, 255, 255, 0.7);
+            color: #555;
             font-size: 1.1rem;
             margin-bottom: 30px;
         }
@@ -363,8 +362,12 @@
                 width: 100%;
                 border-radius: 12px;
             }
+            .content-wrapper {
+                border-radius: 12px;
+            }
             .page-header {
                 padding: 30px 15px 20px;
+                border-radius: 12px 12px 0 0;
             }
             .page-header h1 {
                 font-size: 1.8rem;
@@ -382,10 +385,19 @@
             .flow-grid {
                 grid-template-columns: 1fr;
             }
+            .cta-section {
+                border-radius: 0 0 12px 12px;
+            }
         }
         @media (max-width: 480px) {
             .page-wrapper {
                 border-radius: 8px;
+            }
+            .content-wrapper {
+                border-radius: 8px;
+            }
+            .page-header {
+                border-radius: 8px 8px 0 0;
             }
             .page-header h1 {
                 font-size: 1.4rem;
@@ -408,161 +420,166 @@
             .tech-item i {
                 font-size: 30px;
             }
+            .cta-section {
+                border-radius: 0 0 8px 8px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page-wrapper">
         <div class="overlay1"></div>
-        <div class="page-header">
-            <div class="container">
-                <h1><i class="fas fa-layer-group"></i> Full Stack Development</h1>
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="container">
+                    <h1><i class="fas fa-layer-group"></i> Full Stack Development</h1>
+                </div>
             </div>
+            <section class="services-section">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>Creating beautiful, responsive, and interactive user interfaces using modern frameworks and technologies.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> HTML5 & CSS3</li>
+                            <li><i class="fas fa-check-circle"></i> JavaScript (ES6+)</li>
+                            <li><i class="fas fa-check-circle"></i> Tailwind CSS</li>
+                            <li><i class="fas fa-check-circle"></i> React, Vue.js</li>
+                            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                        </ul>
+                        <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <p>Robust server-side development with scalable architecture, APIs, and database integration.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Node.js, PHP</li>
+                            <li><i class="fas fa-check-circle"></i> RESTful APIs</li>
+                            <li><i class="fas fa-check-circle"></i> Microservices</li>
+                            <li><i class="fas fa-check-circle"></i> Authentication & Security</li>
+                        </ul>
+                        <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database Management</h3>
+                        <p>Efficient database design, optimization, and management for both SQL and NoSQL databases.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> MySQL, PostgreSQL</li>
+                            <li><i class="fas fa-check-circle"></i> MongoDB, Firebase</li>
+                            <li><i class="fas fa-check-circle"></i> Data Modeling</li>
+                            <li><i class="fas fa-check-circle"></i> Performance Tuning</li>
+                        </ul>
+                        <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>DevOps & Deployment</h3>
+                        <p>Streamlined deployment pipelines, cloud hosting, and continuous integration/continuous deployment.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> AWS, Azure, GCP</li>
+                            <li><i class="fas fa-check-circle"></i> Docker & Kubernetes</li>
+                            <li><i class="fas fa-check-circle"></i> CI/CD Pipelines</li>
+                            <li><i class="fas fa-check-circle"></i> Monitoring & Logging</li>
+                        </ul>
+                        <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
+                    </div>
+                </div>
+            </section>
+            <section class="fullstack-flow">
+                <div class="container">
+                    <h2><i class="fas fa-cogs"></i> Our Development Process</h2>
+                    <p class="subtitle">A structured approach to building complete full-stack applications</p>
+                    <div class="flow-grid">
+                        <div class="flow-item">
+                            <div class="step-number">1</div>
+                            <h4>Planning & Analysis</h4>
+                            <p>Understanding your requirements, defining scope, and creating a comprehensive development strategy.</p>
+                        </div>
+                        <div class="flow-item">
+                            <div class="step-number">2</div>
+                            <h4>Frontend Development</h4>
+                            <p>Building responsive, interactive user interfaces with modern frameworks and pixel-perfect designs.</p>
+                        </div>
+                        <div class="flow-item">
+                            <div class="step-number">3</div>
+                            <h4>Backend Development</h4>
+                            <p>Creating scalable APIs, server logic, and integrating with databases for seamless functionality.</p>
+                        </div>
+                        <div class="flow-item">
+                            <div class="step-number">4</div>
+                            <h4>Testing & Quality</h4>
+                            <p>Rigorous testing including unit, integration, and end-to-end testing for bug-free applications.</p>
+                        </div>
+                        <div class="flow-item">
+                            <div class="step-number">5</div>
+                            <h4>Deployment</h4>
+                            <p>Deploying to production with cloud hosting, CI/CD pipelines, and performance optimization.</p>
+                        </div>
+                        <div class="flow-item">
+                            <div class="step-number">6</div>
+                            <h4>Maintenance & Support</h4>
+                            <p>Continuous monitoring, updates, and support to ensure your application runs smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="tech-stack">
+                <div class="container">
+                    <h2><i class="fas fa-code"></i> Our Full Stack Technologies</h2>
+                    <p class="subtitle">We master both frontend and backend technologies for complete solutions</p>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-vuejs"></i>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cta-section">
+                <div class="container">
+                    <h2><i class="fas fa-rocket"></i> Build Your Full Stack Application</h2>
+                    <p>Get a complete, production-ready application with modern frontend, scalable backend, and robust database solutions.</p>
+                    <a href="#" class="btn-cta" onclick="loadPage('contact.html')">
+                        <i class="fas fa-paper-plane"></i> Start Your Project
+                    </a>
+                </div>
+            </section>
         </div>
-        <section class="services-section">
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Frontend Development</h3>
-                    <p>Creating beautiful, responsive, and interactive user interfaces using modern frameworks and technologies.</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> HTML5 & CSS3</li>
-                        <li><i class="fas fa-check-circle"></i> JavaScript (ES6+)</li>
-                        <li><i class="fas fa-check-circle"></i> Tailwind CSS</li>
-                        <li><i class="fas fa-check-circle"></i> React, Vue.js</li>
-                        <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-                    </ul>
-                    <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Backend Development</h3>
-                    <p>Robust server-side development with scalable architecture, APIs, and database integration.</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Node.js, PHP</li>
-                        <li><i class="fas fa-check-circle"></i> RESTful APIs</li>
-                        <li><i class="fas fa-check-circle"></i> Microservices</li>
-                        <li><i class="fas fa-check-circle"></i> Authentication & Security</li>
-                    </ul>
-                    <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database Management</h3>
-                    <p>Efficient database design, optimization, and management for both SQL and NoSQL databases.</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> MySQL, PostgreSQL</li>
-                        <li><i class="fas fa-check-circle"></i> MongoDB, Firebase</li>
-                        <li><i class="fas fa-check-circle"></i> Data Modeling</li>
-                        <li><i class="fas fa-check-circle"></i> Performance Tuning</li>
-                    </ul>
-                    <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon-wrapper">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                    </div>
-                    <h3>DevOps & Deployment</h3>
-                    <p>Streamlined deployment pipelines, cloud hosting, and continuous integration/continuous deployment.</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> AWS, Azure, GCP</li>
-                        <li><i class="fas fa-check-circle"></i> Docker & Kubernetes</li>
-                        <li><i class="fas fa-check-circle"></i> CI/CD Pipelines</li>
-                        <li><i class="fas fa-check-circle"></i> Monitoring & Logging</li>
-                    </ul>
-                    <a href="#" class="btn-service" onclick="loadPage('contact.html')">Get Started</a>
-                </div>
-            </div>
-        </section>
-        <section class="fullstack-flow">
-            <div class="container">
-                <h2><i class="fas fa-cogs"></i> Our Development Process</h2>
-                <p class="subtitle">A structured approach to building complete full-stack applications</p>
-                <div class="flow-grid">
-                    <div class="flow-item">
-                        <div class="step-number">1</div>
-                        <h4>Planning & Analysis</h4>
-                        <p>Understanding your requirements, defining scope, and creating a comprehensive development strategy.</p>
-                    </div>
-                    <div class="flow-item">
-                        <div class="step-number">2</div>
-                        <h4>Frontend Development</h4>
-                        <p>Building responsive, interactive user interfaces with modern frameworks and pixel-perfect designs.</p>
-                    </div>
-                    <div class="flow-item">
-                        <div class="step-number">3</div>
-                        <h4>Backend Development</h4>
-                        <p>Creating scalable APIs, server logic, and integrating with databases for seamless functionality.</p>
-                    </div>
-                    <div class="flow-item">
-                        <div class="step-number">4</div>
-                        <h4>Testing & Quality</h4>
-                        <p>Rigorous testing including unit, integration, and end-to-end testing for bug-free applications.</p>
-                    </div>
-                    <div class="flow-item">
-                        <div class="step-number">5</div>
-                        <h4>Deployment</h4>
-                        <p>Deploying to production with cloud hosting, CI/CD pipelines, and performance optimization.</p>
-                    </div>
-                    <div class="flow-item">
-                        <div class="step-number">6</div>
-                        <h4>Maintenance & Support</h4>
-                        <p>Continuous monitoring, updates, and support to ensure your application runs smoothly.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="tech-stack">
-            <div class="container">
-                <h2><i class="fas fa-code"></i> Our Full Stack Technologies</h2>
-                <p class="subtitle">We master both frontend and backend technologies for complete solutions</p>
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <i class="fab fa-react"></i>
-                        <span>React</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-vuejs"></i>
-                        <span>Vue.js</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-node"></i>
-                        <span>Node.js</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-php"></i>
-                        <span>PHP</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-database"></i>
-                        <span>MySQL</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-database"></i>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Git</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cta-section">
-            <div class="container">
-                <h2><i class="fas fa-rocket"></i> Build Your Full Stack Application</h2>
-                <p>Get a complete, production-ready application with modern frontend, scalable backend, and robust database solutions.</p>
-                <a href="#" class="btn-cta" onclick="loadPage('contact.html')">
-                    <i class="fas fa-paper-plane"></i> Start Your Project
-                </a>
-            </div>
-        </section>
     </div>
     <script>
         function loadPage(url) {
